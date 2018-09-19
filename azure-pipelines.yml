@@ -15,4 +15,18 @@ steps:
 - script: |
     npm install
     npm run test
-  displayName: 'npm install and build'
+  displayName: 'npm install and test'
+
+# Publish Test Results to Azure Pipelines/TFS
+- task: PublishTestResults@1
+  inputs:
+    testResultsFormat: 'JUnit' # Options: JUnit, NUnit, VSTest, xUnit
+    testResultsFiles: '**/test-results.xml' 
+
+# Create drop
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+    includeRootFolder: false
+
+- task: PublishBuildArtifacts@1
