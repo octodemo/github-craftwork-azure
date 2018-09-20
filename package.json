@@ -24,7 +24,18 @@
   },
   "homepage": "https://github.com/jeffhollan/functions-test-samples#readme",
   "dependencies": {
-    "axios": "^0.18.0"
+    "@octokit/rest": "^15.12.0",
+    "axios": "^0.18.0",
+    "body-parser": "*",
+    "co": "~4.6.0",
+    "express": "*",
+    "jsonwebtoken": ">=7.3.0",
+    "minimist": "*",
+    "morgan": "*",
+    "mz": "~2.7.0",
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.3",
+    "underscore": ">=1.8.3"
   },
   "devDependencies": {
     "mocha": "^5.2.0",
