@@ -1,7 +1,9 @@
 const octokit = require("@octokit/rest");
 const jsonwebtoken = require("jsonwebtoken");
 
+// Set these in your Azure Function Application Settings
 const appId = process.env["APP_ID"];
+const installationId = process.env["APP_INST_ID"];
 const pem = process.env["APP_PEM"];
 
 function generateJwtToken() {
@@ -60,13 +62,23 @@ module.exports = function(context, data) {
     token: generateJwtToken()
   });
 
-  context.log("Then", a, b);
-  context.res = {
-    body: { text: "Response here" },
-    headers: { "Content-Type": "application/json" }
-  };
+  octokit.apps
+    .createInstallationToken({
+      installation_id: installationId
+    })
+    .then(function(data) {
+      context.log("createInstallationToken called with", data);
+      octokit.authenticate({ type: "token", token: data.token });
 
-  context.done();
+      // End
+      context.res = {
+        body: { text: "Response here" },
+        headers: { "Content-Type": "application/json" }
+      };
+
+      context.done();
+    });
+
   /*
   const stringBody = JSON.stringify(data);
   const body = JSON.parse(stringBody);
@@ -75,7 +87,6 @@ module.exports = function(context, data) {
   const number = body.issue.number;
   const repository = body.repository.name;
   const owner = body.repository.owner.login;
-  const installationId = body.installation.id; //get from webhook payload
 
   var response = "";
   if (action === "opened") {
