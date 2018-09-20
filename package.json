@@ -1,4 +1,5 @@
 {
+  "engines" : { "node" : "8.9.0" },
   "name": "javascriptoddoreven",
   "version": "1.0.0",
   "description": "Test sample for Azure Functions",
