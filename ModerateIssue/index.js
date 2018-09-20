@@ -53,8 +53,8 @@ function generateJwtToken() {
 
 module.exports = function(context, data) {
   context.log("GitHub Webhook triggered!", data.comment.body);
+  context.log("GitHub IDs (app, installation):", appId, installationId);
   context.res = { body: "New GitHub comment: " + data.comment.body };
-  context.log(data);
 
   // Synchronous operation
   octokit.authenticate({
@@ -77,6 +77,9 @@ module.exports = function(context, data) {
       };
 
       context.done();
+    })
+    .catch(function(e) {
+      context.error("Error createInstallationToken: ", e);
     });
 
   /*
