@@ -54,20 +54,19 @@ module.exports = function(context, data) {
   context.res = { body: "New GitHub comment: " + data.comment.body };
   context.log(data);
 
-  octokit
-    .authenticate({
-      type: "app",
-      token: generateJwtToken()
-    })
-    .then(function(a, b) {
-      context.log("Then", a, b);
-      context.res = {
-        body: { text: "Response here" },
-        headers: { "Content-Type": "application/json" }
-      };
+  // Synchronous operation
+  octokit.authenticate({
+    type: "app",
+    token: generateJwtToken()
+  });
 
-      context.done();
-    });
+  context.log("Then", a, b);
+  context.res = {
+    body: { text: "Response here" },
+    headers: { "Content-Type": "application/json" }
+  };
+
+  context.done();
   /*
   const stringBody = JSON.stringify(data);
   const body = JSON.parse(stringBody);
