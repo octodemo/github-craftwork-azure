@@ -17,41 +17,57 @@ function generateJwtToken() {
   );
 }
 
-async function postIssueComment(
-  installationId,
-  owner,
-  repository,
-  number,
-  action
-) {
-  console.log(`generate jwt token`);
-  await octokit.authenticate({
-    type: "app",
-    token: generateJwtToken()
-  });
+// function postIssueComment(
+//   installationId,
+//   owner,
+//   repository,
+//   number,
+//   action
+// ) {
+//   console.log(`generate jwt token`);
+//   await octokit.authenticate({
+//     type: "app",
+//     token: generateJwtToken()
+//   });
 
-  console.log(`generate installation token ${installationId}`);
-  const {
-    data: { token }
-  } = await octokit.apps.createInstallationToken({
-    installation_id: installationId
-  });
+//   console.log(`generate installation token ${installationId}`);
+//   const {
+//     data: { token }
+//   } = await octokit.apps.createInstallationToken({
+//     installation_id: installationId
+//   });
 
-  console.log(`authenticate with token`);
-  octokit.authenticate({ type: "token", token });
+//   console.log(`authenticate with token`);
+//   octokit.authenticate({ type: "token", token });
 
-  var result = await octokit.issues.createComment({
-    owner,
-    repo: repository,
-    number,
-    body: `Updated function for Azure Functions demo for action ${action} and appId ${appId}.`
-  });
-  return result;
-}
+//   var result = await octokit.issues.createComment({
+//     owner,
+//     repo: repository,
+//     number,
+//     body: `Updated function for Azure Functions demo for action ${action} and appId ${appId}.`
+//   });
+//   return result;
+// }
 
-module.exports = async function(context, data) {
+module.exports = function(context, data) {
   context.log("GitHub Webhook triggered!", data.comment.body);
   context.res = { body: "New GitHub comment: " + data.comment.body };
+  context.log(data);
+
+  octokit
+    .authenticate({
+      type: "app",
+      token: generateJwtToken()
+    })
+    .then(function(a, b) {
+      context.log("Then", a, b);
+      context.res = {
+        body: { text: "Response here" },
+        headers: { "Content-Type": "application/json" }
+      };
+
+      context.done();
+    });
   /*
   const stringBody = JSON.stringify(data);
   const body = JSON.parse(stringBody);
@@ -73,15 +89,4 @@ module.exports = async function(context, data) {
     );
   }
   */
-
-  context.log(data);
-
-  context.res = {
-    body: { text: "Response here" },
-    headers: { "Content-Type": "application/json" }
-  };
-
-  context.done();
-
-  return;
 };
