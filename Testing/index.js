@@ -8,7 +8,8 @@ const jsonwebtoken = require("jsonwebtoken");
 
 module.exports = function(context, data) {
   context.log("Node version:", process.version);
-  context.log("GitHub Webhook triggered!", data.comment.body);
-  context.res = { body: "New GitHub comment: " + data.comment.body };
+  context.log("Data", data);
+  // context.log("GitHub Webhook triggered!", data.comment.body);
+  // context.res = { body: "New GitHub comment: " + data.comment.body };
   context.done();
 };
