@@ -1,16 +1,14 @@
 // Set these in your Azure Function Application Settings
-const appId = process.env["APP_ID"];
-const installationId = process.env["APP_INST_ID"];
+const appId = process.env["APP_ID"] || "";
+const installationId = process.env["APP_INST_ID"] || "";
 // Decode our secret pem file
-const pem = Buffer.from(process.env["APP_PEM"], "base64").toString();
+const pem = Buffer.from(process.env["APP_PEM"] || "", "base64").toString();
 
 const octokit = require("@octokit/rest")();
 const jsonwebtoken = require("jsonwebtoken");
 
 function generateJwtToken() {
   // Sign with RSA SHA256
-  console.log(`appId = ${appId}`);
-  console.log(`pem = ${pem}`);
   return jsonwebtoken.sign(
     {
       iat: Math.floor(new Date() / 1000),
@@ -29,41 +27,37 @@ async function postIssueComment(
   number,
   action
 ) {
-  console.log(`generate jwt token`);
+  // Create bearer token and initial authentication session
   await octokit.authenticate({
     type: "app",
     token: generateJwtToken()
   });
 
-  console.log(`generate installation token ${installationId}`);
+  // Retrieve token from app installation
   const {
     data: { token }
   } = await octokit.apps.createInstallationToken({
     installation_id: installationId
   });
 
-  console.log(`authenticate with token`);
+  // Finally authenticate as the app
   octokit.authenticate({ type: "token", token });
 
   var result = await octokit.issues.createComment({
     owner,
     repo: repository,
     number,
-    body: `Updated Function for Azure Functions demo for action ${action} and appId ${appId}.`
+    body: `Hello from Azure Functions! Action is \`${action}\` for appId \`${appId}\`.`
   });
   return result;
 }
 
 module.exports = async function(context, data) {
-  context.log("START HERE");
-  context.log("PEM", pem);
-  const test = 2;
   const body = data.body;
   const action = body.action;
   const number = body.issue.number;
   const repository = body.repository.name;
   const owner = body.repository.owner.login;
-  context.log("START HERE2", action);
   try {
     var response = "";
     if (action === "opened") {
