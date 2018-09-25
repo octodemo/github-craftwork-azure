@@ -3,6 +3,7 @@
 ⚠️WIP 
 
 
-![BRB](https://media1.tenor.com/images/c207c3ae566842483b09fd6a6dab2841/tenor.gif?itemid=4519399)
+Create a GitHub App that automatically posts a comment each time an issue is opened, using Azure DevOps Pipelines and Azure Function Apps.
+
 
 
