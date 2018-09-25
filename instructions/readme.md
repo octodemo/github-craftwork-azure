@@ -10,10 +10,9 @@ Please note: For the Azure DevOps Pipelines integration to work, only a GitHub A
 
 ## Instructions
 
-Ensure you have a working GitHub account, and [an Azure account with an active subscription](signup.azure.com ) (a free trial is available during signup, but a phone number and a credit card are required).
+Ensure you have a working GitHub account, and [an Azure account with an active subscription](https://signup.azure.com ) (a free trial is available during signup, but a phone number and a credit card are **required** although no money will exchanged ).
 
-
-## Step 1. Fork repo, install Pipelines build
+## Step 1. Fork repository and install Pipelines
 
 1. Log in on GitHub
 2. Fork this repository: https://github.com/pierluigi/github-craftwork-azure
@@ -24,33 +23,34 @@ Ensure you have a working GitHub account, and [an Azure account with an active s
 5. Install Pipelines selecting the newly created repo in the dropdown
 	1. Sign into your Azure credentials
 	2. Create a new Organization for the Pipelines project
-	3. Pick region close to you
-	4. Name Pipelines project `github-craftwork-azure`
+	3. Pick a region close to you
+	4. Name yopur Pipelines project something like `github-craftwork-azure`
 6. The Azure Pipelines project is now set up and integrated with your GitHub repository.
 	1. Select the repository for creating the new pipeline
-	2. Leave the yml file alone
-	3. Click RUN
-	4. Check the build works
+	2. Do not modify the pipeline definition YAML file
+	3. Click RUN and wait until the build finishes successfully
+	
+💡Congrats! You have integrated an automated CI build tool using Azure DevOps Pipelines on your repository.
 
-**Now let’s create the Function App**
+## Step 2. Create a Function App project on the Azure Portal
 
-1. [Microsoft Azure](https://portal.azure.com/)
-2. Click on Create -> Compute -> Function App
+Our next step will be to create the Azure Function App that will host our code.
 
-![](readme/BC9B4CDC-4C1D-4009-83F7-7D52B185FA3E.png)
+1. Log in on the [Microsoft Azure portal](https://portal.azure.com/)
+2. Click on `Create` -> `Compute` -> `Function App`
 
-3. Confirm and wait for deployment 
-4. Click on Function Apps in the nav menu
-5. Verify Runtime 2.0
-![](readme/A020B500-E83C-406C-8069-90DA5C2C4665.png)
-This gives us Node > 8
+<img src="readme/BC9B4CDC-4C1D-4009-83F7-7D52B185FA3E.png" width="400" >
 
-**Let’s deploy our function from GitHub**
+*Our function configuration*
 
-Back to Pipelines
-https://dev.azure.com/
+3. Confirm and wait for the new resource to be deployed.
 
-6. Click on Releases
+
+## Step 3. Enable automatic deployment from GitHub
+
+Let's go back to [Azure Pipelines](https://dev.azure.com).
+
+1. Click on Releases
 	1. New Pipeline
 	2. Azure App Service deployment
 		1. Create “Deploy to Azure Functions” stage
@@ -87,8 +87,8 @@ https://dev.azure.com/
 	
 ![](readme/9103F5FA-1A99-4680-A3AA-902E805956DD.png)
 
-**Let’s create a GitHub App**
-1. 
+## Step 4. Create our GitHub App
+
 ![](readme/B039EE86-02E4-43B1-87DB-6C5CA8FCF068.png)
 
 https://github.com/settings/developers
@@ -101,29 +101,26 @@ https://github.com/settings/developers
 4. Install app on the repo
 
 Now back to Azure Function Apps
+
 1. Select app -> Application Settings
-2. Add new setting in the list: APP_ID 18036
-3. Add new setting in the list: APP_INST_ID 18036 (**TODO GET FROM WEBHOOK**)
+2. Add new setting in the list: APP_ID `YOUR_APP_ID`
+3. Add new setting in the list: APP_INST_ID `YOUR_INSTALLATION_ID` (**TODO GET FROM WEBHOOK**)
 
 **Encoding the secret key**
-- [ ] MacOS: `cat azure-moderate-issue.2018-09-24.private-key.pem | openssl base64 | pbcopy`
-	- [ ] Else : https://www.base64decode.org/ 
+We need to encode our `.pem` certificate using base64 in order to store it as an environment variable.
+
+- if you're on MacOS / Linux: `cat azure-moderate-issue.2018-09-24.private-key.pem | openssl base64 | pbcopy`
+- alternatively use https://www.base64decode.org/ 
 	
-5. Add new setting in the list APP_PEM with the bse64 encoded stirng of your pem
+4. Add new setting in the list APP_PEM with the bse64 encoded stirng of your pem
 ![](readme/1ADDAD91-4F30-43DA-93D3-92ED418F9247.png)
 
 
 
 ### Reading material
 
-- [ ] GitHub App Walkthrough [octokit.net/github-apps.md at master · octokit/octokit.net · GitHub](https://github.com/octokit/octokit.net/blob/master/docs/github-apps.md#github-app-walkthrough) 
-
-
-
-VS CODE functions
+- GitHub App Walkthrough [octokit.net/github-apps.md at master · octokit/octokit.net · GitHub](https://github.com/octokit/octokit.net/blob/master/docs/github-apps.md#github-app-walkthrough) 
+- VS CODE functions
 [Create your first function in Azure using Visual Studio Code | Microsoft Docs](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-vs-code)
 
 
-
-FURTHER READING
-[Getting Key Vault Secrets in Azure Functions – Statuscode – Medium](https://medium.com/statuscode/getting-key-vault-secrets-in-azure-functions-37620fd20a0b)
