@@ -1,9 +1,10 @@
 // Set these in your Azure Function Application Settings
 const appId = process.env["APP_ID"];
 const installationId = process.env["APP_INST_ID"];
-const pem = process.env["APP_PEM"];
+// Decode our secret pem file
+const pem = Buffer.from(process.env["APP_PEM"], "base64").toString();
 
-const octokit = require("@octokit/rest");
+const octokit = require("@octokit/rest")();
 const jsonwebtoken = require("jsonwebtoken");
 
 function generateJwtToken() {
@@ -48,19 +49,21 @@ async function postIssueComment(
     owner,
     repo: repository,
     number,
-    body: `Updated Function for Kubernetes demo for action ${action} and appId ${appId}.`
+    body: `Updated Function for Azure Functions demo for action ${action} and appId ${appId}.`
   });
   return result;
 }
 
-module.exports = async function(context) {
-  const stringBody = JSON.stringify(context.request.body);
-  const body = JSON.parse(stringBody);
+module.exports = async function(context, data) {
+  context.log("START HERE");
+  context.log("PEM", pem);
+  const test = 2;
+  const body = data.body;
   const action = body.action;
   const number = body.issue.number;
   const repository = body.repository.name;
   const owner = body.repository.owner.login;
-
+  context.log("START HERE2", action);
   try {
     var response = "";
     if (action === "opened") {
@@ -72,19 +75,18 @@ module.exports = async function(context) {
         action
       );
     }
-    return {
+    context.res = {
       status: 200,
-      body: {
-        text: response
-      },
+      body: response,
       headers: {
         "Content-Type": "application/json"
       }
     };
   } catch (e) {
-    return {
+    context.log(e);
+    context.res = {
       status: 500,
-      body: e
+      body: e.message
     };
   }
 };
