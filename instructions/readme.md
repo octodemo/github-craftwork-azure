@@ -39,7 +39,7 @@ Our next step will be to create the Azure Function App that will host our code.
 1. Log in on the [Microsoft Azure portal](https://portal.azure.com/)
 2. Click on `Create` -> `Compute` -> `Function App`
 
-<img src="readme/BC9B4CDC-4C1D-4009-83F7-7D52B185FA3E.png" width="400" >
+<img src="readme/BC9B4CDC-4C1D-4009-83F7-7D52B185FA3E.png" width="350" >
 
 *Our function configuration*
 
@@ -88,36 +88,34 @@ Let's go back to [Azure Pipelines](https://dev.azure.com).
 ![](readme/9103F5FA-1A99-4680-A3AA-902E805956DD.png)
 
 ## Step 4. Create our GitHub App
+<img src="readme/B039EE86-02E4-43B1-87DB-6C5CA8FCF068.png" width="350" >
 
-![](readme/B039EE86-02E4-43B1-87DB-6C5CA8FCF068.png)
 
-https://github.com/settings/developers
+Visit you [Developer Settings](https://github.com/settings/apps) page on GitHub and click on GitHub Apps. 
 
 ![](readme/D302A190-1134-418E-AAA2-158FCCB9B15E.png)
 
-1. Generate APP
-2. Download key
-3. Save APP ID `18036` and Installation ID
-4. Install app on the repo
+1. Create a new App, using the default settings and using the URL and secret provided by the Azure Function App
+2. Download the private key
+3. Note down the App ID somewhere (we're going to need this later)
+4. Install app on your repository
 
-Now back to Azure Function Apps
+Now go back to Azure Function Apps.
 
-1. Select app -> Application Settings
-2. Add new setting in the list: APP_ID `YOUR_APP_ID`
-3. Add new setting in the list: APP_INST_ID `YOUR_INSTALLATION_ID` (**TODO GET FROM WEBHOOK**)
+1. Select your function and click on `Application Settings`
+2. Add new setting in the list: APP_ID `[your GitHub App ID here]`
 
-**Encoding the secret key**
 We need to encode our `.pem` certificate using base64 in order to store it as an environment variable.
 
-- if you're on MacOS / Linux: `cat azure-moderate-issue.2018-09-24.private-key.pem | openssl base64 | pbcopy`
+- if you're on MacOS / Linux: `cat [the .pem file you just downloaded] | openssl base64 | pbcopy`
 - alternatively use https://www.base64decode.org/ 
 	
-4. Add new setting in the list APP_PEM with the bse64 encoded stirng of your pem
+4. Add a new setting in the list with key APP_PEM and the encoded string as value.
+
 ![](readme/1ADDAD91-4F30-43DA-93D3-92ED418F9247.png)
 
 
-
-### Reading material
+### Further Reading
 
 - GitHub App Walkthrough [octokit.net/github-apps.md at master · octokit/octokit.net · GitHub](https://github.com/octokit/octokit.net/blob/master/docs/github-apps.md#github-app-walkthrough) 
 - VS CODE functions
