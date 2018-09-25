@@ -1,6 +1,5 @@
 // Set these in your Azure Function Application Settings
 const appId = process.env["APP_ID"] || "";
-const installationId = process.env["APP_INST_ID"] || "";
 // Decode our secret pem file
 const pem = Buffer.from(process.env["APP_PEM"] || "", "base64").toString();
 
@@ -58,6 +57,8 @@ module.exports = async function(context, data) {
   const number = body.issue.number;
   const repository = body.repository.name;
   const owner = body.repository.owner.login;
+  const installationId = body.installation.id;
+
   try {
     var response = "";
     if (action === "opened") {
