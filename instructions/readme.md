@@ -82,8 +82,8 @@ Let's go back to [Azure Pipelines](https://dev.azure.com).
 
 
 5. Click on “ModerateIssue”
-	1. Click on get URL  copy it somewhere (`https://github-craftwork-pjawesome.azurewebsites.net/api/ModerateIssue?clientId=default`)
-	2. Click on get GitHub Secret, copy it somewhere (`98BxXWy3AhoWr2LnMkhsNqsFm905cefiovleA4SYch1hMmFILaMiAA==`)
+	1. Click on get URL, copy it somewhere 
+	2. Click on get GitHub Secret, copy it somewhere
 	
 ![](readme/9103F5FA-1A99-4680-A3AA-902E805956DD.png)
 
