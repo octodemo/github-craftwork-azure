@@ -1,27 +1,27 @@
 
-# GitHub Craftwork on Azure – Workshop
+# GitHub Craftwork on Azure – Workshop Instructions
 This README contains the accompanying instructions for the follow-along workshop. Follow the steps below in order to build your first GitHub App, an automated GitHub issue moderator bot, running on Azure Functions and deployed via Azure DevOps Pipelines.
 
 ## Prerequisites
 
-A GitHub account, an Azure account and a browser are the only mandatory requirements.
+A GitHub account, an Azure account (see below) and a browser are the only mandatory requirements.
 
-Please note: For the Azure DevOps Pipelines integration to work, only a GitHub Account is needed. However for the Azure Function Apps deployment to work, you are going to need a separate Azure account. Although a free trial version with a time restriction is available for Azure Functions, it signup page seems to have stopped working (see https://github.com/projectkudu/TryAppService/issues/87). It may be possible to remove the requirement on an Azure account if that resumes working at a later point.
+**Please note**: For the Azure DevOps Pipelines integration to work, only a GitHub Account is needed. However for the Azure Function Apps deployment to work, you are going to need a separate Azure account. Although a free trial version with a time restriction is available for Azure Functions, it signup page seems to have stopped working (see https://github.com/projectkudu/TryAppService/issues/87). It may be possible to remove the requirement on an Azure account if that resumes working at a later point.
 
 ## Instructions
 
-Ensure you have a working GitHub account, and [an Azure account with an active subscription](https://signup.azure.com ) (a free trial is available during signup, but a phone number and a credit card are **required** although no money will exchanged ).
+Ensure you have a working GitHub account, and [an Azure account with an active subscription](https://signup.azure.com ) (a free trial is available during signup – a phone number and a credit card are **required** although [no money will be exchanged](https://azure.microsoft.com/en-gb/offers/ms-azr-0044p/)).
 
 ## Step 1. Fork repository and install Pipelines
 
-1. Log in on GitHub
+1. Log in to your GitHub account
 2. Fork this repository: https://github.com/pierluigi/github-craftwork-azure
-3. Enable `Issues` (under Settings)
+3. Enable repository `Issues` (under Settings)
 4. Go to [Azure Pipelines · GitHub Marketplace · GitHub](https://github.com/marketplace/azure-pipelines)
 	1. Select the `Free` plan
 	2. Click `Install it for free`
 5. Install Pipelines selecting the newly created repo in the dropdown
-	1. Sign into your Azure credentials
+	1. Sign into your Azure account
 	2. Create a new Organization for the Pipelines project
 	3. Pick a region close to you
 	4. Name yopur Pipelines project something like `github-craftwork-azure`
@@ -29,7 +29,7 @@ Ensure you have a working GitHub account, and [an Azure account with an active s
 	1. Select the repository for creating the new pipeline
 	2. Do not modify the pipeline definition YAML file
 	3. Click RUN and wait until the build finishes successfully
-	
+
 💡Congrats! You have integrated an automated CI build tool using Azure DevOps Pipelines on your repository.
 
 ## Step 2. Create a Function App project on the Azure Portal
@@ -89,7 +89,6 @@ Let's go back to [Azure Pipelines](https://dev.azure.com).
 
 ## Step 4. Create our GitHub App
 <img src="readme/B039EE86-02E4-43B1-87DB-6C5CA8FCF068.png" width="350" >
-
 
 Visit you [Developer Settings](https://github.com/settings/apps) page on GitHub and click on GitHub Apps. 
 
