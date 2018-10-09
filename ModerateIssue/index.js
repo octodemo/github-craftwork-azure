@@ -5,6 +5,8 @@ const pem = Buffer.from(process.env["APP_PEM"] || "", "base64").toString();
 
 const octokit = require("@octokit/rest")();
 const jsonwebtoken = require("jsonwebtoken");
+const request = require('request');
+const querystring = require('querystring');
 
 function generateJwtToken() {
   // Sign with RSA SHA256
