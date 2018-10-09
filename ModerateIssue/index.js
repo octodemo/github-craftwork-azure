@@ -19,13 +19,45 @@ function generateJwtToken() {
   );
 }
 
+function getLuisIntent(utterance) {
+
+  const endpoint =
+    "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/";
+
+  const luisAppId = process.env.LUIS_APP_ID;
+
+  var queryParams = {
+    "verbose": true,
+    "q": utterance
+  }
+
+  var luisRequest =
+    endpoint + luisAppId +
+    '?' + querystring.stringify(queryParams);
+
+    return new Promise((resolve, reject) => {
+      request(luisRequest,
+      function (err,
+        response, body) {
+
+        if (err)
+          reject(err)
+        else {
+          var data = JSON.parse(body);
+          resolve(data.topScoringIntent.intent.toLowerCase());
+        }
+      })
+    }
+    );
+}
 
 async function addLabels(
   installationId,
   owner,
   repository,
   number,
-  action
+  action,
+  title
 ) {
   // Create bearer token and initial authentication session
   await octokit.authenticate({
@@ -43,11 +75,13 @@ async function addLabels(
   // Finally authenticate as the app
   octokit.authenticate({ type: "token", token });
 
+  const label = await getLuisIntent(title);
+
   var result = await octokit.issues.addLabels({
     owner,
     repo: repository,
     number,
-    labels: ['bug', 'help wanted', 'question']
+    labels: [label]
   });
   return result;
 }
@@ -56,6 +90,7 @@ module.exports = async function(context, data) {
   const body = data.body;
   const action = body.action;
   const number = body.issue.number;
+  const title = body.issue.title;
   const repository = body.repository.name;
   const owner = body.repository.owner.login;
   const installationId = body.installation.id;
@@ -68,6 +103,7 @@ module.exports = async function(context, data) {
         owner,
         repository,
         number,
+        title,
         action
       );
     }
