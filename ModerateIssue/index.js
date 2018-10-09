@@ -37,7 +37,7 @@ async function authenticate(installation_id) {
   const { data: { token } } = await octokit.apps.createInstallationToken({ installation_id });
 
   // Finally authenticate as the app
-  octokit.authenticate({ type: "token", token });
+  return octokit.authenticate({ type: "token", token });
 }
 
 function getLuisIntent(utterance) {
@@ -70,9 +70,10 @@ async function addLabelsFromTitle(owner, repo, number, title) {
   });
 }
 
-module.exports = async function (context, { body }) {
+module.exports = async function (context, data) {
+  const { body } = data
   const { action, repository, issue, installation } = body;
-  const { number, title } = issue.number;
+  const { number, title } = issue;
   const repositoryName = repository.name;
   const repositoryOwner = repository.owner.login;
   const installationId = installation.id;
@@ -82,7 +83,6 @@ module.exports = async function (context, { body }) {
     if (action === "opened") {
       await authenticate(installationId)
       response = await addLabelsFromTitle(
-        installationId,
         repositoryOwner,
         repositoryName,
         number,
