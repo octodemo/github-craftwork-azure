@@ -77,7 +77,7 @@ async function addLabels(
   // Finally authenticate as the app
   octokit.authenticate({ type: "token", token });
 
-  const label = await getLuisIntent(title, context);
+  const label = await getLuisIntent(title);
 
   var result = await octokit.issues.addLabels({
     owner,
@@ -89,6 +89,7 @@ async function addLabels(
 }
 
 module.exports = async function (context, data) {
+  const body = data.body;
   const action = body.action;
   const number = body.issue.number;
   const title = body.issue.title;
