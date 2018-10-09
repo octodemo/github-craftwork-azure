@@ -37,7 +37,7 @@
     "request-promise-native": "^1.0.3",
     "underscore": ">=1.8.3",
     "dotenv": "^4.0.0",
-    "querystring": "^0.2.0",
+    "querystring": "^0.2.0"
   },
   "devDependencies": {
     "mocha": "^5.2.0",
