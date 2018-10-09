@@ -1,9 +1,11 @@
 node_modules
 package-lock.json
 test/test-results.xml
-.vscode
+
 bin
 obj
 *.csproj
 local.settings.json
 proxies.json
+
+.vscode/

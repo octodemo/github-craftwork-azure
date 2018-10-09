@@ -19,7 +19,8 @@ function generateJwtToken() {
   );
 }
 
-async function postIssueComment(
+
+async function addLabels(
   installationId,
   owner,
   repository,
@@ -42,11 +43,11 @@ async function postIssueComment(
   // Finally authenticate as the app
   octokit.authenticate({ type: "token", token });
 
-  var result = await octokit.issues.createComment({
+  var result = await octokit.issues.addLabels({
     owner,
     repo: repository,
     number,
-    body: `Hello from Azure Functions! Action is \`${action}\` for appId \`${appId}\`.`
+    labels: ['bug', 'help wanted', 'question']
   });
   return result;
 }
@@ -62,7 +63,7 @@ module.exports = async function(context, data) {
   try {
     var response = "";
     if (action === "opened") {
-      response = await postIssueComment(
+      response = await addLabels(
         installationId,
         owner,
         repository,
