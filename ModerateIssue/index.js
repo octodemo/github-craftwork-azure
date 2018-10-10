@@ -1,6 +1,6 @@
 const octokit = require("@octokit/rest")();
 const authenticate = require('./authenticate');
-const getLuisIntent = require('./authenticate');
+const getLuisIntent = require('./get-luis-intent');
 
 module.exports = async function (context, data) {
   const { body } = data
