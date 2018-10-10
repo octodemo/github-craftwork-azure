@@ -4,7 +4,8 @@ var issueOpenedPayload = require('./fixtures/issue-opened.json')
 
 describe("ModerateIssue", () => {
   var moderateIssue
-
+  var defaultLabel;
+  
   before(() => {
     createCommentStub = sinon.spy()
     addLabelsStub = sinon.spy()
@@ -15,11 +16,11 @@ describe("ModerateIssue", () => {
       }
     }
 
-
+    defaultLabel = 'question'
     moderateIssue = proxyquire("../ModerateIssue/index", {
       '@octokit/rest': () => octoKitStubs,
       './authenticate': () => true,
-      './get-luis-intent': () => 'question'
+      './get-luis-intent': () => new Promise(resolve => resolve(defaultLabel))
     });
   });
 
@@ -27,7 +28,7 @@ describe("ModerateIssue", () => {
     await moderateIssue({}, { body: issueOpenedPayload })
 
     sinon.assert.calledWith(addLabelsStub, {
-      labels: ['new issue'],
+      labels: [defaultLabel],
       number: issueOpenedPayload.issue.number,
       owner: issueOpenedPayload.repository.owner.login,
       repo: issueOpenedPayload.repository.name
