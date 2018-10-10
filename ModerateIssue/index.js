@@ -1,11 +1,10 @@
 const octokit = require("@octokit/rest")();
 const authenticate = require('./authenticate');
-const getLuisIntent = require('./get-luis-intent');
 
 module.exports = async function (context, data) {
   const { body } = data
   const { action, repository, issue, installation } = body;
-  const { number, title } = issue;
+  const { number } = issue;
   const repo = repository.name;
   const owner = repository.owner.login;
   const installationId = installation.id;

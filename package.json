@@ -28,16 +28,17 @@
     "axios": "^0.18.0",
     "body-parser": "*",
     "co": "~4.6.0",
+    "dotenv": "^4.0.0",
     "express": "*",
     "jsonwebtoken": ">=7.3.0",
     "minimist": "*",
     "morgan": "*",
     "mz": "~2.7.0",
+    "proxyquire": "^2.1.0",
+    "querystring": "^0.2.0",
     "request": "^2.81.0",
     "request-promise-native": "^1.0.3",
-    "underscore": ">=1.8.3",
-    "dotenv": "^4.0.0",
-    "querystring": "^0.2.0"
+    "underscore": ">=1.8.3"
   },
   "devDependencies": {
     "mocha": "^5.2.0",
