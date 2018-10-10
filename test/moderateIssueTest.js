@@ -23,11 +23,11 @@ describe("ModerateIssue", () => {
     });
   });
 
-  it('should create comment when issue is opened', async () => {
+  it('should assign the enhancement label', async () => {
     await moderateIssue({}, { body: issueOpenedPayload })
 
     sinon.assert.calledWith(addLabelsStub, {
-      labels: ['new issue'],
+      labels: ['enhancement'],
       number: issueOpenedPayload.issue.number,
       owner: issueOpenedPayload.repository.owner.login,
       repo: issueOpenedPayload.repository.name
