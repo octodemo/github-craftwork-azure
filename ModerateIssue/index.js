@@ -13,11 +13,11 @@ module.exports = async function (context, data) {
     let response = "";
     if (action === "opened") {
       await authenticate(octokit, installationId)
-      response = await octokit.issues.createComment({
+      response = await octokit.issues.addLabels({
         owner, 
         repo, 
         number, 
-        body: "Thanks for submitting this issue. We will take a look at it!"
+        labels: ['enhancement']
       })
     }
     context.res = {
