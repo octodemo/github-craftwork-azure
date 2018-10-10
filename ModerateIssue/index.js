@@ -1,5 +1,8 @@
 // Set these in your Azure Function Application Settings
-const appId = process.env["APP_ID"] || "";
+const appId = process.env.APP_ID
+const luisAppId = process.env.LUIS_APP_ID;
+const endpointKey = process.env.LUIS_ENDPOINT_KEY;
+
 // Decode our secret pem file
 const pem = Buffer.from(process.env["APP_PEM"] || "", "base64").toString();
 
@@ -8,8 +11,10 @@ const jsonwebtoken = require("jsonwebtoken");
 const request = require('request');
 const querystring = require('querystring');
 
+const luisEndpoint = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/";
+
+// Sign with RSA SHA256
 function generateJwtToken() {
-  // Sign with RSA SHA256
   return jsonwebtoken.sign(
     {
       iat: Math.floor(new Date() / 1000),
@@ -21,46 +26,7 @@ function generateJwtToken() {
   );
 }
 
-function getLuisIntent(utterance) {
-
-  const endpoint =
-    "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/";
-  const luisAppId = process.env.LUIS_APP_ID;
-  const endpointKey = process.env.LUIS_ENDPOINT_KEY;
-
-  var queryParams = {
-    "verbose": true,
-    "q": utterance,
-    "subscription-key": endpointKey
-  }
-
-  var luisRequest =
-    endpoint + luisAppId +
-    '?' + querystring.stringify(queryParams);
-
-  return new Promise((resolve, reject) => {
-    request(luisRequest,
-      function (err,
-        response, body) {
-
-        if (err)
-          reject(err)
-        else {
-          var data = JSON.parse(body);
-          resolve(data.topScoringIntent.intent.toLowerCase());
-        }
-      })
-  }
-  );
-}
-
-async function addLabels(
-  installationId,
-  owner,
-  repository,
-  number,
-  title
-) {
+async function authenticate(installation_id) {
   // Create bearer token and initial authentication session
   await octokit.authenticate({
     type: "app",
@@ -68,42 +34,57 @@ async function addLabels(
   });
 
   // Retrieve token from app installation
-  const {
-    data: { token }
-  } = await octokit.apps.createInstallationToken({
-    installation_id: installationId
-  });
+  const { data: { token } } = await octokit.apps.createInstallationToken({ installation_id });
 
   // Finally authenticate as the app
-  octokit.authenticate({ type: "token", token });
+  return octokit.authenticate({ type: "token", token });
+}
 
+function getLuisIntent(utterance) {
+  const queryParams = {
+    "verbose": true,
+    "q": utterance,
+    "subscription-key": endpointKey
+  }
+
+  const luisRequest = `${luisEndpoint}/${luisAppId}?${querystring.stringify(queryParams)}`;
+
+  return new Promise((resolve, reject) => {
+    request(luisRequest, (err, _, body) => {
+        if (err) reject(err)
+        
+        const data = JSON.parse(body);
+        resolve(data.topScoringIntent.intent.toLowerCase());
+      })
+  });
+}
+
+async function addLabelsFromTitle(owner, repo, number, title) {
   const label = await getLuisIntent(title);
 
-  var result = await octokit.issues.addLabels({
+  return await octokit.issues.addLabels({
     owner,
-    repo: repository,
+    repo,
     number,
     labels: [label]
   });
-  return result;
 }
 
 module.exports = async function (context, data) {
-  const body = data.body;
-  const action = body.action;
-  const number = body.issue.number;
-  const title = body.issue.title;
-  const repository = body.repository.name;
-  const owner = body.repository.owner.login;
-  const installationId = body.installation.id;
+  const { body } = data
+  const { action, repository, issue, installation } = body;
+  const { number, title } = issue;
+  const repositoryName = repository.name;
+  const repositoryOwner = repository.owner.login;
+  const installationId = installation.id;
 
   try {
-    var response = "";
+    let response = "";
     if (action === "opened") {
-      response = await addLabels(
-        installationId,
-        owner,
-        repository,
+      await authenticate(installationId)
+      response = await addLabelsFromTitle(
+        repositoryOwner,
+        repositoryName,
         number,
         title
       );
@@ -116,7 +97,7 @@ module.exports = async function (context, data) {
       }
     };
   } catch (e) {
-    context.log(e);
+    context.log("Error:" ,e);
     context.res = {
       status: 500,
       body: e.message
