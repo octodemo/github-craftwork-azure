@@ -132,9 +132,30 @@ Once you have the pem file encoded, go back to the Azure Portal and click on you
 
 💡 Woah! You buily your first GitHub App! Congratulations, human!
 
-## Step 6. Enjoy your automatic moderator!
+## Step 6. Alpha version: post a basic reply
 
-Create a new Issue in your repository and wait for our bot to interact with it!
+Create a new Issue in your repository and wait for the bot to post a "hello world" reply. This is the very first step towards real, AI-driven moderation. That is because the master branch only contains a basic version of our function that only posts a basic response.
+
+Next we will create a Pull Request to merge the contents of the `assign-label-to-new-issues` branch which contains a slightly different version of the basic demo code that will add a predetermined label to any new issue. This is so you get familiar with the pull request flow and so that we can verify that our Azure DevOps CI builds are running properly.
+
+1. Navigate to the `Code` section of your repository
+2. Click on the `branch` dropdown and select `assign-label-to-new-issues`
+3. Click on the `new pull request` button and confirm
+4. Wait for Azure DevOps to repurt the build ran successfully
+5. Merge the pull request
+6. Wait for the check next to the last commit in the `Commits` tab to also report "green" 
+7. Finally test the newly deployed version of the function by creating a new issue
+
+At this point you should see the label `enhancement` applied to any newly created issue.
+
+## Step 7. Turn on the AI moderation!
+
+We need to repeat the above procedure but this time by switching to the branch `use-luis-to-label-issues`. 
+Before we can do that, we need to extend the Application Settings on our Azure Function App to also add two more items.
+
+The workshop organizers will share the LUIS application ID and secret token at this point so that your own Function app can connect to our pre-trained LUIS service API that will parse your issues and send back a response that we can parse to determine which label to apply to the issue. 
+
+Once the pull request is merged and the new version deployed, you will finally see that the issues will get one of the 3 labels `bug`, `enhancement` and `question` applied automatically based on the input issue title. This is powered by the AI-driven cognitive services running on Microsoft LUIS.
 
 ### Further Reading
 
