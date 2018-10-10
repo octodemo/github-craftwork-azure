@@ -1,10 +1,10 @@
 const luisAppId = process.env.LUIS_APP_ID;
 const endpointKey = process.env.LUIS_ENDPOINT_KEY;
 
-const request = require('request');
-const querystring = require('querystring');
-
-module.exports = function getLuisIntent(utterance) {
+module.exports = function (utterance) {
+  const request = require('request');
+  const querystring = require('querystring');
+  
   const luisEndpoint = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/";
 
   const queryParams = {
