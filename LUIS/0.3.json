@@ -1,0 +1,3908 @@
+{
+  "luis_schema_version": "3.1.0",
+  "versionId": "0.3",
+  "name": "TriageIssues",
+  "desc": "App to triage new issues",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "Bug"
+    },
+    {
+      "name": "Enhancement"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "Question"
+    }
+  ],
+  "entities": [],
+  "composites": [],
+  "closedLists": [],
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "prebuiltEntities": [],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [],
+  "utterances": [
+    {
+      "text": "\"&\" replacement %26 doesnt work",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "\"./runrole cups\" & \"./iiab-install --reinstall\" repeatedly fail on rpi",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "\"multiple single element removes\" test fails intermittently under mysterious circumstances",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "\"nearing proficiency\" adds to lo progress bar, but shouldn't",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "(4.x.x) if downloading xars fails, the build should fail",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "(5.x.x) if downloading xars fails, the build should fail",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "(funktion) x-button + crossrefs",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": ".supervised on failing computation causes deadlock",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "[0.0.4-hf1] take in changes from #255",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "[best evar chat] description isn't working (submitted by audrey)",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "[bo] verify stock if needed before updating to delivered",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "[bug] assigning values to custom fields is broken",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "[bug] change white text to dark when theme includes top white gradient point",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "[bug] custom field cannot be deleted",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "[bug] for some reason pay rate type on census upload defaulted to an invalid enum",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "[bug] my information needs to flag missing information for the save button to show",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "[bugfix] audio is not a block tag",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "[c128] c128 memory accessible for c code/data?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "[dash] flutter sdk archive doesn't appear in sidenav",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "[feature request] - \"humanized\" dataframes as responses",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "[feature request] - attaching ports/sensors streaming to spots",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "[feature] waistline integration",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "[fib.j2] fix ip segment calculation",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "[hw2] 새로 생성된 article의 id",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "[network] fallback packet detection partly broken",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "[processors] remove values and/or tags",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "[question] how to make it work like no-ip?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "[question] sonoff ifan02 - deactivate sound when fan speed changes",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "[rfc] server-side schema validation",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "[scripts] major changes coming to all scripts",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "[stable14] in 14 the click action gets lost in the backbone view.",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "[staging] duplicates in person postings and superiors sections",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "[wiptest] updates to chargeback assignments class and tests",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "<show code> appears lots of times when i like and unlike a post",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "3.7 add prettier script to package.json",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "405 should generate allow header field in 405 response",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "8103 mission based operations",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "a worldobject shouldn't be restricted to 'abstract' or 'final'",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "aaoptions *aaoptions = aaobject(aaoptions) aaoptions.plotoptions.series.animation = (id)@(false);/不好使",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "abiuyfg",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "absence of randn function in symbol api",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "accessing data from the json file",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "adb android debug bridge ('adb') command not found gvr daydream unity3d",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "add a little widget to show an image of the selected material to render the morphology.",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add a menu for each function we add?",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add a source-html plugin",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add a source-stats plugin",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add a way to quit the game",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add ability to migrate assets to pro",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add acl checks to model::* functions, on error return fake data",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add additional items to .gitignore file",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add an aggregate license report",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add an index to the page",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add authentication",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add bootstrap script to set up this repo for local development",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add companies using vue.js",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add comparison table to website",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add copy button to planet",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add create account button",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add docker batch to readme.",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add dynamic scopes and claims to discovery",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add element checker",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add footer to webpage",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add friendly error message for ros/catkin#961",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add image count and most popular page",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add labels to floatspinners",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add --load-config and --save-config settings",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add looqbox dev container",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "add more examples",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add more projects",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add php-soap extension to php image",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "add possibility to filter which clones to show",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add prettier library",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add progress bars when uploading/downloading large numbers of files.",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add restart command",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add some signatures to model::media::collection",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add some signatures to model::media::item",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add some signatures to model::media::pile",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add some signatures to model::social::community",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add some signatures to model::social::group",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add some signatures to model::social::profile",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add stable version of docs?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "add statistics reset to framereceiver",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add styling to index.html",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add styling to the index.html file",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add support for `code` datatype search",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add support for lexicon data sources",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add the ability to disable specific upgrades",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "add the buttons + and - to zoom in and zoom out",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add the dag version of the siamese model prototext and",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add threadpool specific errors",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add to travis ci",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add ultra rare gradient",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "add units to extrabytes attribute definition",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "add vertex to mesh",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "add yarn-plug-and-play functionality",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "added configuration for metrics exporter",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "added esperanto numbers translation json",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "added support for c#",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "added worky.mx",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "adding a new web search engine",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "adding kernels in a gp regression",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "adding more than 16 buttons",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "additional data/chart on individual contributor pages--time of last packet",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "adds a failing test",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "addui setting in rstools_registry.xml is ignored.",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "adjusted ranger loadouts",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "aesthetic changes",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "agent-auth.exe doesn't show any error if it can't write the client.keys",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "aio support",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "airflow s3 operator creates invalid csv files",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "allow exiting the level editor when the code does not parse",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "allow only multiplication by weight?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "allow read to take in strings",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "allow the user to define a default starting point for a presentation",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "allow the user to store a presentation",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "ambari-24746. upgrade solr version to 7.5.0",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "ambiguous error message when no toolchain packages are present on a platform",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "ambiguous methods for ρ",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "an issue piping to a readstream.",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "ansible-playbook bootstrap.yml terminated",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "ansibot adds \"thank you for submitting this pull-request !\" for issues",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "anything else which can achieve a lock other than mutex/rwlock?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "are we still using jquery ui tabs?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "as an admin, i cannot create a new theme",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "assignment locks not displaying on student learning objective progress page on the admin side",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "asynccall context is not properly sent through asynccall.resultstore",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "asynclocal got unexpected value after executioncontext.suppressflow in threadpool",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "auth problem with tomcat",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "authors being stored under multiple spellings",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "auto carousel image switch glitch",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "autocorrect strikes after previewing a reply",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "auto-generator?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "automatic changelog",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "avr-164 a typo on the sword of sharpness",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "aws token required but not using it",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "basic tornado project configuration",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "basic use documentation grammer in unclear in ligature section - \"until we all for subsetting\"",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "basketball blurb functionality",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "best way to fit multi-task model with independent tasks?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "bitmex (javascript for browser) error [invalid stoppx for ordtype]",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "bitmex and javascript (browser) - can't fetch orders",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "block input data size limit(ation)",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "blockchain compaction trigger",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "board does not place ships/placements are not recorded.",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "books on resource page do not have href set in link",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "bridge missing after reboot",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "broken ordered list in \"cluster kyma installation\"",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "bstats has got a new repository",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "buffer block members with opspecconstantop size fails",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "bug fix by caius. (#announcements)",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "bug resolved and added extra functionality.",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "bug with open \"catalog - product page\"",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "bug: bold chart title and legend",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "bug: the order of imports is changed in sniper rmode",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "build error on linux centos",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "build error: linking to libboost_python instead of libboost_python27",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "build failed",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "build: undefined: unknown_base_type",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "building without cuda gives build error",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "bullet points in pdf inconsistent",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "buttons are hidden by ad-blockers (ublock)",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "c# gui app integration example",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "callback weight",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "calling destroy on second time is not working",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "camera enhancements",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "can string_variable_set_size block be made to accept symbolic constants?",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "can’t search by username/repo",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "cannot move message and cannot copy message",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "cannot open the project",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "cannot solve methodcall which contains fileld access as parameters",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "can't place ships on the board",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "can't set (initial) parameters if no noisemodel is present",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "cant set headers error",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "can't take focus back after sub-process quits on macos",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "canvas error: deprecated use of jquery ui",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "canvas mouse/key event passthrough",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "category operations missing get (synchronous) method.",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "ce smart home wifi smart dimmer light switch (tywe1s) model wf500d",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "change authenticated state once user logs in",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "change default sorting on route page",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "change link of github api",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "change manifest dependency from plug-in to package",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "change regen meter stroke end-cap style to cap_butt",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "change self.*",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "change the style of the tables.",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "change to hashrouter",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "change to reporting average speed instead of coast time in the trials",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "check if there is a possibility to display main menu and loading screen even if wrongly encoded",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "check that all map and user handles have been destroyed when `dtk_finalize()` is called",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "clean, central record of all job step scripts' commands",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "cli: stage_parser: fix state rendering when no minions match the target",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "clippings manager: copied folder doesn't appear after copy",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "close idbconnection after asyncscopedlifestyle by disposal",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "closes #270 (fixes hashmapextensions + tests)",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "cloud messaging: not getting a token back on ios",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "cmdlets can't be loaded on a network share",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "cobinhood fetch order price",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "coinjoin implementation",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "collection ui",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "collector cant connect to elasticsearch",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "composer being blocked",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "conditionally inferring a type of a missing function argument always returns {}",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "configs should use a map",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "confusing command-line argument error message",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "conhost process remains with ping -t in echocon",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "consider other cluster definitions for task resource allocation",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "console text output directive",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "contact form",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "content not right",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "contract between api and pacer",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "convert string to snake case behavior.",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "cookie opt-out",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "copy authors and maintainers info from module",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "copy function not working",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "cosmosdb collection ttl parameter options changed and now can't be set to 'off' through powershell.",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "cost to configure the intelligent cloud for onprem",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "could we try to start this project in f#?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "counts for attachments not displaying in email list",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "court field not appearing in better bibtex exports",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "coveralls not working",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "crash related to text selection",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "crash when moving a section and inserting item in it at the same time",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "create a guide project",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "create a lock so tests don't have to worry about being async: false",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "create an aur package?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "create angular frontend",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "create claim model on contentful",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "create form for registering and make accessable via /register",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "create player classes",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "create react native app project",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "create script with insert and delete statements",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "create slider for renewability of imported electricity",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "create template for login form and make accessable via /login",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "create your first pull request",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "creating a unit test to test opening roms",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "criar sistema de migrations.",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "crop ratio=as image not respected in dynamic profiles",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "custom access_token_expire_seconds by application",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "custom dropdown bug",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "custom filter list subscription sorting is inconsistent",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "customising forms with html elements",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "cve-2017-15400 present in 2.2.1-8+deb9u1",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "cxjoined.java:33-36: need implement this class. this...",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "daily cronjob push new items",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "database(without entity fw)",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "dbcsr_make_undense works strange",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "debugging guide",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "decide on authentication method",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "default interpolation",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "define code owners",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "define unique accounts for the application and allow only the necessary permissions be accessible through it",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "delay of several seconds when interacting with shairport-sync [answered]",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "deploy_packaging flow runs uninstall_packaged_incremental with wrong package name",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "deprecationwarning: cgi.escape is deprecated, use html.escape instead",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "design: consider adding an organization api",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "development",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "devhelp - lz4 decoding errors on master",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "dhcp does not currently work",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "dialog box broken",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "dice rolling and rps",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "differences between illumina sequencing analysis viewer and interop python package",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "difficulty displaying bingmap through angular route",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "directory in step 3 does not exist",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "disable video functions",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "display employee details to manager when he logs in",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "distributionnotfound when running \"blaskcli run\"",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "dnsimple: fix challenge.",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "do not configure tasks per sourceset",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "do not use evaluationdependsonchildren()",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "do not use latest forge",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "do you support pc?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "docs: fs.writestream.byteswritten",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "does postgraphile support fastify?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "draweritem selection background with rounded corners",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "drop table does not flush the existing cached prepared statements",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "dropped peer connections not getting closed or cleaned up?",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "duplicate types propindex and proposalindex",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "easy way to know if the next or previous button was pressed ?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "edit debug arg check to allow extra flags",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "editor: hierarchy view highlight is not disappearing",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "enable users to search a country from the homepage",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "energyreset (?) manually via mqtt",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "english2cypher",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "ensure resourcejob is cancelled correctly on shutdown",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "entity framework",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "entity history for complex types",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "eos support",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "err_notregistered in tweeter example",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "error deleting default node pool: googleapi: error 404: not found",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "error message displays in dashboard for few seconds after making payment from assignment link and also there is a delay in loading performance forecast",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "error messages are missing for your objection reason on object to this proposed update topic",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "error pages",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "error with bismark methylation extractor",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "escape backticks when converting",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "everyone's using pyscripter?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "excelpainter - paint changing ykeys in the same sheet",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "exception loading blockstate for the variant",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "exception: storage_error (v2.9)",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "explorer node delayed",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "expression pedal send cc only to 115 instead of 127",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "ext-authz cannot be used with dns.",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "extending wrapper objects (e.g. number, string, etc.)",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "extra slash in http request to checkmarx",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "failed attempt to reinstall app, maybe due to requirements",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fairshake insignia client library on-demand registration",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "faster float conversions on arm",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "feat add icons #57",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "feature request \"keep registered\" option for building in vmware fusion",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "feature request: granular permissions for users",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "feature/1",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "feature/10 default data",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "feature/flyway",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "filter tree comparisons are always false between disjoint types",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "filtering images",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "finish gethandlerforurl()",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "first pageload produce stacktrace",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix \"good\" collision not honoring mesh groups in obj files",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix #16: tablegenerator empty data handling",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix #165: verify signature",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "fix #425 - add postgres to testing environment (gitlabci and travis)",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix #44: crypto 3.0: hash based counter",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "fix `purser-software` mnemonic when creating a new instance",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix adsense settings.",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "fix basic stat display",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix broken fitting comment traverse",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix cluttered operations with components! move matchers outside",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "fix config.json relative path",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix duplicate test file",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix effectinfo for motor-control-loss",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix ethers imports that changed in v4",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix generaldetailssection",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix issue #11: chroniclesession logging",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix layout",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "fix loading of previous jobs",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix metadata permissions when creating it",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix options system",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix relations networks<->lines and companies<->vj with routes without agency id",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix ruby-version",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix scanner base url",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix sentry level choices in wizard",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix snapped overlays above chatbox not being rendered",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix sodium scroll crashes on android 5.x.x",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix the location selection using interactive maps",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix year (0) for movie folders",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix(app): allow portal to re-check for root element",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix(checkupdates): workaround for github api rate limit exceeded error",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix(dev): remove deprecated loglevel option",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fix(ui): duplicate notifications browser on linux",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fixaddmissingmember should work for type literal",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "fixed redundancies and missing info in the readme",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "fixes #1642 handle connection-segment-points during move/copy/create instance",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "flip track textures on symmetry counterparts",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "flux.compile ignores multiple yields",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "focused cell after cursor left the simpanel",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "folders are not removed after file entity is removed in version 1.4",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "found inf or nan global norm. : tensor had nan values [op:checknumerics]",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "frames with labels wider than themselves",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "front-envoy example not working anymore",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "further improve readablity/performance",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "generate a list of the original contributors to main.css/style.css",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "generic creation of objectgraphtype",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "get height of only certain spectrums",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "get pid of running container",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "getting 502 bad gateway with tls-enabled backend",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "getting launch error that git is not installed when after mac install on mojave",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "gf vanity and wardrobe teleporting player back to cabin after use",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "good way to cache transformations on \"large\" data?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "google app creation manual is outdated",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "got error when adding more messages to existing collection",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "gui for tictactoe",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "guj language added + reduced apk size",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "handle new additions from sicd 1.2",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "handle possible connectivity issues to pa server",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "having davobject::etag property writable",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "heic support in libvips",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "hide the bbp morphology loader if brion cannot be imported.",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "home carousel responsiveness glitch for lg devices",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "home page",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "homepage slider should automatically advance",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "hotkeys : ctrl +c (copy)",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "hotkeys : ctrl +v (paste)",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "hover label for each state",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "how can i list all smb server in local network?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "how did you decide to use profunctor optics?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "how the support value is calculated in prefixspan-py module",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "how to \"override\" renderer functions?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "how to deal with deletions?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "how to draw unrolled form of rnn using keras?",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "how to override / change the default labsources folder?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "how to print current request's url?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "how to record sound",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "how to run multi envoy process on one linux server",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "how to set a 4-week rolling period",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "hsts redirection warning false positive when redirecting to parent host with includesubdomains",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "html editor",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "http live streaming",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "i cannot activate the license key",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "ibeacon not counting down in confidence",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "identity created in extension grants",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "ie11 rendering of contributors on events",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "if downloading xars fails, the build should fail",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "if inside an if loop?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "ignore default value",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "ignore events triggered by the auto-analysis",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "image editor batch resizings fails",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "image sharing",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "image ui",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "image upload form",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "imagemagick fails to convert file due to missing configuration file",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "images are not loaded on hydration",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "implement 1d orbit integration in c",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "implement coin-level (utxo) freezing from the qt ui and in the lib/wallet code.",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "implement controller for user authentication",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "implement import/export of the index database (fixes #83)",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "implement simple class medici::downloader, uses youtube-dl",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "implement stop loss on not supported exchanges",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "implement user names textview around title",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "implement when tap on photos like conter - show first liked photo",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "import error for mediablackhole",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "import skins",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "impossible to change device name from web ui",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "improve legibility of slider text",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "improve navbar arrangement",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "improve the build documentation",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "improve the structure of software to better support incoming non-standard scripts",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "improved attribute change check",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "in indexerelement, findindexer(type targettype) always return true",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "in the forum on a phone, make \"show level editor\" work",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "inconsistent call hold state",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "incorrect property validation in jassloginmoduleconfiguration",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "incorrectly assuming there is always going to be v3 files",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "increase transparency of an image (c++)",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "indexing solution and single archive repo questions",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "indicate r/rstudio is busy when installing through gui using secondary repositories",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "info about mqtt dependency",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "initial database configuration",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "input tabulation",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "inspector - divide by zero error when executing databasegrowthsinsert",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "install flowjs for type checking",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "integrate mpu9250 data for pointing position determination",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "integration tests implementation",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "integration with method dungeon tools",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "integration with react-redux?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "intellisense is wrong with staticmethod",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "interest in table and miscellanous symbols live templates?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "introduce a project wide styleguide/formatter for code, e.g. black?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "invalid repository results in duplicate console warning message in addition to pop-up",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "investigate queries that return a result containing the same gist id twice",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "investigate yellow motors",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "ipv6 check for being disabled properly",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "is \"tracking\" the right word we want to use?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "is it possible to prevent timers from starting?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "is ndarray creatiton thread safe",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "is this a right approach for using paris with epoxy's @modelview",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "is this still maintained?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "isempty is not working with formdata",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "issue 1",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "issue 118: update app for new name and colors",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "issue in installing oracle_fdw 2.0.1 on pg 9.6",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "issue with labels",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "issue with use submitted groups and drivers module",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "issue-123: added close button to surveyresponses",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "issue-124: fixed url link for analysis",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "issues in sonarr",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "java.net.socketexception: software caused connection abort",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "java.net.sockettimeoutexception",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "jive - new local file based on existing document throws null pointer exception",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "json check",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "lamp cli issues",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "lat & lon not sorted error in mbon/data_big*.nc files",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "launcher must check for updated version at launch",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "layout block - after saving as re-usable block it goes a little strange in admin screen",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "layout bug on partner page",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "logging logic will break `--log` argument",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "login responses should be an enum",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "login: don't show api as dropdown if only one option",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "logistics request table reset recipe",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "long tasks are not displayed completely",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "loxberry_log.php: $stdlog variable interfere with __destruct function",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "macos/linux compatible save folder getter",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "make effectinfo correctly handle articles with no summaries",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "make sure transaction filtering is working",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "make webresource::createnewinstance() overridable",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "making payment from the assignment link loads student dashboard and not the assignment",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "manage rejecting mapping update to in elasticsearch bolt",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "maybe swap the \"contribute\" and \"explore\" buttons",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "mbp gpu fix failed",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "mempool page broken with new webserver early loading",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "meni item link arent using angular routing mechnism",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "merge with codyn?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "message filter bug during log read",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "messages persisting between flights",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "mhn-rest-apis between two date data filter",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "migrate css to styled-components",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "migrate to new blizzard community api",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "missed a bad merge conflict. resolving.",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "missing attendee picker in user admin",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "missing class const on cert refresh",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "missing interface extends in java library",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "mixer init must create .yum-mix.conf",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "mobile layout test ui",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "modify brightness/contrast of an image",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "modifying error so re-thrown shows original stacktrace",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "module not found: can't resolve 'react-jss/lib/jssprovider",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "more generic mapping interface for field reflection",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "move center to cursor button to a less \"easy to screw up\" location.",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "move config files back to config bucekt",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "move dust mixing in crafting table to the mixer/mortar depending on tier",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "move every plugin to its own package",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "move to java 8 requirement?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "move visual studio layer -json targets back into helper folder",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "move yaml file opening to function",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "mudclient.java needs abstracting",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "multi-node multi-cpu training do not converge",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "multiples key storage error",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "name the system",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "naming duplicate functions in different objects",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "navbar",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "need new page describing supporters of camps.",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "network widget not updating as expected after selecting neighbor gene",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "new fields to search",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "new shot property - name",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "new version of the painter",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "newest reduction and newest action counters are wrong",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "newly assigned builders will be idle if the unfinished building gets destroyed",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "newuidmap requires cap_sys_admin (rather than cap_set{u,g}id)?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "next & back button should traverse exactly one tab",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "nicer display of encoded/unencoded properties",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "nn.py里面dynamic_gru判读h_0 != none出错",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "node and python microservices not running as service",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "noise diode usage requirements",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "nosuchfielderror: service_id",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "not tested last version",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "npm dependencies binaries are not linked when postinstall is executing",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "obtain 100% unit test coverage",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "odd quick fix ordering for misspelled identifiers",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "office365 compliance search - new script added",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "on live mode results are saved 2 or 3 times on exit",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "onchange event for select component.",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "order manager does not load when thumbnail id is nil",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "order trends in the legend based on the number of series in the trend",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "organizations links on resources page don't have href set on links",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "outdated es.json",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "outdated es-419.json",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "Överväg en cross-over med halland styleguide",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "part of the ships placed off board!",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "particlesystem and alpha problem",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "pass get params to add popups",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "pep8 optimization",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "perf recording and insights into performance of watchbot workers",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "performance tuning on horovod",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "petastorm-generate-metadata.py cannot locate unischema class due to unexpected working directory",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "pipe particles on hud only",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "plataforma na fase invertida vertical não leva o player",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "please help analyze the problem (请帮忙分析问题)",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "plugin versioning and ge compatibility",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "plugins memory leak detected in tests",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "port change is ignored after initial setup",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "possibility to set a solid background",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "ppos shows up on the graph in counts instead of um",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "pr commits with the same author don't show avatar",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "practice recommendation for dealing with an output list",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "pre-populating charts data runs at wrong times and more than one at a time",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "problem with the output of uniform spanning tree object",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "problem with typings",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "problem with unicode slugs.",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "problems altering and adding a column.",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "problems with looping through json tree",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "process download, check db, download(), when done create meta_item record",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "project configuration",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "project requirement and specification 관련 질문",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "proper way of running with own profile",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "provide more than one bean to compose a single line in bean2textconverter",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "q&a add-on & topics compatibility",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "qa - add workers",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "question - can encrypted model elements be searched against?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "question about example ex3",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "question about max_value rule and dynamic reference",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "question of 'sqlite3codecattach()'",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "question: bandwidth of network",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "question: how can i blacklist /home for firefox?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "question: in-memory data store",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "question: vocabulary annotations for contained entity sets?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "questions: start in multiple modes / error safety",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "radiogroup labels wrong color",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "rand does not work without any arguments",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "random response when multiple rules have same trigger",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "random tool: default values are not used (user has to re-set the values even when using 0-100)",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "re: automount a specific googledrive folder for all users on start-up",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "react portal update required",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "readme broken link to travisspark.org",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "recent events should be in reverse chronological order",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "reduce coldstart time more.",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "referenceerror: path is not defined",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "regarding friendly urls",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "regex for ni number",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "release build fails with missingdefaultresource",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "relisten is crashing when loading the attributed credits text in the settings view",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "remove \"win points\" from match command",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "remove all php warnings",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "remove noexcept(false) from destructor",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "remove particles hero animation for perf reasons?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "removed secondary repositories require session restart to be cleared out",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "rename floatvalue to floatseq?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "replace github.com/go-resty/resty with gopkg.in/resty.v1",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "replace/add custom token endpoint url",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "reports",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "require signed commits",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "resources can‘t get",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "resources links do not open in a new tab",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "retrieve_related fails for toone relationship",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "return button caching",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "returns (none, 'status code : 401 client error: unauthorized for url: https://www.cryptopia.co.nz/api/getbalance')",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "review framework version",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "rotated uw differs from soniclib",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "route deletion",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "run into server error (500) at index `/`. i don't know how to configure local?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "search in slugs when no fields are specified",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "search result scrolling/scrollbars in ff on windows",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "searching via a unique element like ng-repeat=\"service in services | filter: specialismfilter \"",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "sections",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "seeder missing bits",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "segfault when song changes if playlist timeout is 0 and the playlist is empty",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "sell game on gog",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "send message method is cutting off message.",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "sendfile + ktls",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "serial fails, suspect lack of ground - using cell phone 110vac charger for power",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "serial number for emulated \"wemo\"-device",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "server config names incorrect",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "set max open files limit in logcollector",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "setup minion queue for background tasks",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "sharp installation fails - synology",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "should we get rid of the instance-parameter in multi instance plugins?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "show artillery travel time",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "show dataset error as returned by the api",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "show events",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "show login status and links in main layout template",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "show simple form at /enqueue, paste url, on submit adds to background queue",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "show single media_item at /item/<uid>",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "show single profile at /profile/<uid>",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "show the generated password of an applicant",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "simplify the code for the graph storage registry",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "siren will not notify me when my version is older.",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "skip over whitespace characters at the state of the line",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "snow will produce error after boundary_faces specification.",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "socket.io not working on my machine",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "some questions",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "sometimes enemy units in our base are ignored",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "span incorrectly marked as child of",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "specified initialization vector (iv) does not match the block size for this algorithm using tripledesimplementation in asp.net core",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "speech bubble for print on entities",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "spfx solution is not identified correctly",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "ssl/tls configuration with certificate",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "stable branch for robonomics_comm",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "stacked mobs insta killed",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "standalone ux and computer",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "standardize views on different resolution machines",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "start creation of new vessels for sci, inc. and general public for use with ksp",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "step button has no description",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "steplines interpolation method",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "sticky footer, only when page has content.",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "stopping condition for cost sensitive evaluations",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "storage::netapp::snmp::plugin wrong total space -> negative disk usage",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "store and load report data",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "suggestion: move content from 'site/' folder to root",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "suggestion: reflection events",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "suggestion: typescript without setting up a build pipeline (for seamless use in existing javascript projects)",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "support document / kb deletion",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "support empty alternations",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "support for da vinci mini w",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "support retrieving x509 certificates cn if javax.naming package is unavailable",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "swift4.2 please",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "swig and shared pointers don't work",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "switch on on boot regardless the \"allways off\" option",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "switchtopic2 2- cant seem to adjust this setting",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "tactical interference",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "tar backup excludes some directories from backup",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "tc - add hotkey for tc lookup",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "tensorboard: continue training curves",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "tensorflow code does not work",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "terminus not finding plugin",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "test",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "test issue 1",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "test issue 3",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "test use of library https://github.com/jruere/multiprocessing-logging in windows",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "tests for tictactoe",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "the category differ is complete, close #6",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "the homepage feels a bit \"dry\"",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "theme/general theme enhancements",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "there are 3 failed tests in release v1.2.6",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "timedistributed with list of inputs",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "to choose: public cloud",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "to_s platform",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "top level nav should include a \"programs\" item with drop down to each program",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "training and help",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "training_generator line 202 batch_size = x[0].shape[0]",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "treat sections move as `insertion` + `deletion`",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "triggers for paneldynamic",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "try to fix travis ci",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "tryton: add option to not display label on dict view",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "trytond: fix module merging when view already exists",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "tuple construction not working in activity generator",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "turn each acl pseudocode into a proper perl function",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "tutorial children",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "tutorial: dynamic areas",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "tutorial: event emitter",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "type isn't checked when using an array<type> as return value",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "typeerror: path must be a string or buffer in function download",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "unable to set dynamic title in mainactivity action bar",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "unhelpful exception in start-servicefabricapplicationupgrade",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "unify property drawers for savemethods and savablevariables",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "unpredictable graph behaviour",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "unsupported languages",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "update browser.elements to take args/kwargs",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "update css for mobile and tablet",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "update dutch translation",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "update essentials categories",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "update example files when update happens",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "update mapping files with missing enemy forces",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "update markersupportimpltest to verify imarker.location",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "update package location in girder context",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "update readme badges.",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "update readme with shield icons",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "update readme.md",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "update seed file",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "updatechecker no connection",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "updated csl files",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "updating user info",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "upgrade custom sqlite builds to version 3.25.2",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "upload ui improvements",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "use a mosfet-based switch?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "use echo/gin as request multiplexer",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "use pyro for continuous distribution like speech recognition",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "user scaffold",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "v2.0.3",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "v2.0.4",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "version 0.2.0",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "very high p99th read latency during \"read only\" workload",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "very slow extension activation time, causes extensionhost to hang",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "vim extension shhould be moved to \"editor keymaps\"",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "vmware: rewrite get_resource_pool method for correct resource_pool",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "volunteer interest form",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "volunteer manager would like a description paragraph to add more text to volunteer page",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "volunteer page hero image should be set to `no-repeat bottom center`",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "warning message about insecure cran mirror is displayed twice",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "we should allow server owners to charge player realm coins / gems",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "web version js basic implementation",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "web version ui design",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "webgl to render constantly and react to change",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "website template/theme isn't loading",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "week update - 2",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "weird problem with 'go mono' font",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "weird theme rendering for spacemacs on macos",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "what are the extensibility points of these targets?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "what do you guys use to generate change logs?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "what is the benefit of using platform-specific line ending?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "what is the rationale behind quietly ignoring environment.setenvironmentvariable calls with targets user or machine on unix-like platforms?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "what tools can be used for writing html source code with bidi text?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "what's missing for 1.0.0 release?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "when a collection snapshot fails with \"permission denied\", the collection is not cleared",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "when i click the undo or redo button, all event subscriptions are cleared.",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "when importing swagger to create an api, add json schema validation to the relevant endpoints",
+      "intent": "Enhancement",
+      "entities": []
+    },
+    {
+      "text": "when running zenbot on windows 10 within ubuntu virtualbox, the gui does not load on the random/specific port within the virtualbox",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "where is info from ckan?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "where to set the hostname?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "which operations can be in-place?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "why is [ converted to %5b after emogrify?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "why my cocoapods icon is orange？",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "why the outer div doesn't get height style automatically?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "why trailing slashes removed?",
+      "intent": "Question",
+      "entities": []
+    },
+    {
+      "text": "wrong descending alphabetic list",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "wrong display width/heigth when using rotation on drv_disp_adagfx_ili9341_stm",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "wrong skins being displayed in skin selector",
+      "intent": "Bug",
+      "entities": []
+    },
+    {
+      "text": "wrong suggestions in extension search for @category when using @id",
+      "intent": "Bug",
+      "entities": []
+    }
+  ],
+  "settings": []
+}
