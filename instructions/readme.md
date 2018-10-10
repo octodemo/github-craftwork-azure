@@ -6,13 +6,14 @@ This README contains the accompanying instructions for the follow-along workshop
 
 A GitHub account, an Azure account (see below) and a browser are the only mandatory requirements.
 
-**Please note**: For the Azure DevOps Pipelines integration to work, only a GitHub Account is needed. However for the Azure Function Apps deployment to work, you are going to need a separate Microsoft Azure account with a free subscription.
+**Please note**: For the Azure DevOps Pipelines integration to work, a GitHub Account and a Microsoft account are needed. However for the Azure Function Apps deployment to work, you are going to need a Microsoft Azure account with a free subscription.
 
 ## Instructions
 
-Ensure you have a working GitHub account, and [an Azure account with an active subscription](https://signup.azure.com ) (a free trial is available during signup – a phone number and a credit card are **required** although [no money will be exchanged](https://azure.microsoft.com/en-gb/offers/ms-azr-0044p/)).
+Ensure you have a working GitHub account, a Microsoft account, and [an Azure account with an active subscription](https://signup.azure.com ) (a free trial is available during signup – a phone number and a credit card are **required** although [no money will be exchanged](https://azure.microsoft.com/en-gb/offers/ms-azr-0044p/)).
 
-## Step 1. Fork repository and install Pipelines
+
+## Step 1. Fork repository and enable Issues
 
 1. Log in to your GitHub account
 2. Fork this repository: https://github.com/octodemo/github-craftwork-azure
@@ -27,11 +28,11 @@ Ensure you have a working GitHub account, and [an Azure account with an active s
 	1. Sign into your Azure account
 	2. Create a new Organization for the Pipelines project
 	3. Pick a region close to you
-	4. Name yopur Pipelines project something like `github-craftwork-azure`
+	4. Name your Pipelines project something like `github-craftwork-azure`
 3. The Azure Pipelines project is now set up and integrated with your GitHub repository.
 	1. Select the repository for creating the new pipeline
 	2. Do not modify the pipeline definition YAML file
-	3. Click RUN and wait until the build finishes successfully
+	3. Click `RUN` and wait until the build finishes successfully
 
 💡 Congrats! You have integrated an automated CI tool using Azure DevOps Pipelines on your repository.
 
@@ -40,7 +41,7 @@ Ensure you have a working GitHub account, and [an Azure account with an active s
 Our next step will be to create the Azure Function App where our code will be deployed.
 
 1. Log in on the [Microsoft Azure portal](https://portal.azure.com/)
-2. Click on `Create` -> `Compute` -> `Function App`
+2. Click on `Create a resource` -> `Compute` -> `Function App`
 
 <img src="readme/BC9B4CDC-4C1D-4009-83F7-7D52B185FA3E.png" width="350" >
 
