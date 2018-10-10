@@ -13,7 +13,7 @@ module.exports = async function (context, data) {
   try {
     let response = "";
     if (action === "opened") {
-      await authenticate(installationId)
+      await authenticate(octokit, installationId)
       const label = await getLuisIntent(title);
       response = await octokit.issues.addLabels({
         owner,

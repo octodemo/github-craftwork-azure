@@ -2,7 +2,6 @@ const appId = process.env.APP_ID
 
 const pem = Buffer.from(process.env["APP_PEM"] || "", "base64").toString();
 
-const octokit = require("@octokit/rest")();
 const jsonwebtoken = require("jsonwebtoken");
 
 // Sign with RSA SHA256
@@ -18,7 +17,7 @@ function generateJwtToken() {
   );
 }
 
-module.exports = async function authenticate(installation_id) {
+module.exports = async function (octokit, installation_id) {
   // Create bearer token and initial authentication session
   await octokit.authenticate({
     type: "app",
