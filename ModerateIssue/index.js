@@ -14,13 +14,12 @@ module.exports = async function (context, data) {
     let response = "";
     if (action === "opened") {
       await authenticate(octokit, installationId)
-      const label = await getLuisIntent(title);
-      response = await octokit.issues.addLabels({
-        owner,
-        repo,
-        number,
-        labels: [label]
-      });
+      response = await octokit.issues.createComment({
+        owner, 
+        repo, 
+        number, 
+        body: "Thanks for submitting this issue. We will take a look at it!"
+      })
     }
     context.res = {
       status: 200,
