@@ -25,7 +25,7 @@
   <main class='pa3 ph5-ns sans-serif black-80'>
     <div id="form">
       <h2 class="h2">Create a GitHub App</h2>
-      <form action="https://github.com/settings/apps/new" method="post" class="w-100 center">
+      <form action="https://github.com/settings/apps/new" method="post" class="w-100">
         <div class='w-100 mt3'>
           <label class="db fw6 lh-copy f6">Azure Function URL</label>
           <input name='functionURL' class="pa2 input-reset ba bg-transparent w-100" placeholder="Endpoint URL of your function">
@@ -36,7 +36,20 @@
         </div>
       </form>
     </div>
-    <div class='values-block'></div>
+    <div id='values-block'>
+      <form class="w-100">
+        <fieldset class="ba b--transparent ph0 mh0">  
+          <div class="mt3">
+            <label class="db fw6 lh-copy f6" for="APP_ID">APP_ID</label>
+            <input readonly class="w-100 code pa2 black-50" name="APP_ID" id="APP_ID" value="" />
+          </div>
+          <div class="mt3 w-100 h-50">
+            <label class="db fw6 lh-copy f6" for="APP_PEM">APP_PEM</label>
+            <textarea readonly class="code pa2 black-50" name="APP_PEM" id="APP_PEM"></textarea>
+          </div>
+        </fieldset>
+      </form>
+    </div>
   </main>
   <script>
     const manifest = {
@@ -58,7 +71,8 @@
       
       const manifestInput = document.querySelector("#manifest");
       const formBlock = document.querySelector("#form");
-      const valuesBlock = document.querySelector('.values-block');
+      const valuesBlock = document.querySelector("#values-block");
+      valuesBlock.classList.add("clip");
 
       function setManifest(manifest) {
         manifestInput.value = JSON.stringify(manifest)
@@ -78,42 +92,34 @@
         const request = new XMLHttpRequest();
         request.onreadystatechange = function() {
           if (request.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
-            console.log(request.status);
             if (request.status == 403) {
               alert("Ooops. Something went wrong - 403 forbidden");
             }
             if (request.status == 200 || request.status == 201) {
-              console.log(request.responseText);
               callback(JSON.parse(request.responseText))
             } else {
               window.location.replace(window.location.href.split('?')[0])
             }
           }
         };
+
         request.open( 'POST', `https://api.github.com/app-manifests/${code}/conversions` );
         request.setRequestHeader( 'Accept', 'application/vnd.github.fury-preview+json' );
-        console.log('Sending AJAX request');
         request.send();
       }
       
       function showAppValues(values) {
-        console.log(values);
-        const APP_ID = values.id;
-        const SECRET = values.webhook_secret
+        valuesBlock.classList.remove("clip");
+
+        const appIdField = document.querySelector('input[name="APP_ID"]');
+        appIdField.value = values.id;
+        
         const PEM = values.pem;
         const PEM_BASE64 = btoa(PEM)
-        const text = `secret: ${SECRET}\u000a\u000aAPP_ID: ${APP_ID} \u000aAPP_PEM:`
-        const node = document.createElement("code");                 
-        const textnode = document.createTextNode(text);        
-        node.appendChild(textnode);
-        valuesBlock.appendChild(node); 
-        
-        const textareaNode = document.createElement("textarea");                 
-        textareaNode.value = PEM_BASE64;                      
-        textareaNode.classList.add("w-100 h-50");
-        valuesBlock.appendChild(textareaNode); 
+        const textareaNode = document.querySelector('textarea[name="APP_PEM"]');
+        textareaNode.value = PEM_BASE64;      
+        // Hide form                
         formBlock.classList.add("clip");
-
       }
       
       document.querySelector('input[name="functionURL"]').addEventListener('input', (e) => {
@@ -126,11 +132,10 @@
       const code = getQueryParameterByName('code')
       
       if(code) {
-        console.log("Retrieve config for code", code);
         retrieveAppConfiguration(code, showAppValues)
       }
       
-      setManifest(manifest)
+      setManifest(manifest);
     </script>
   </body>
   </html>
