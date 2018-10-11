@@ -98,8 +98,7 @@
         const text = `secret: ${SECRET}\u000a\u000aAPP_ID: ${APP_ID} \u000aAPP_PEM:`
         const node = document.createElement("code");                 
         const textnode = document.createTextNode(text);        
-        node.appendChild(textnode).classList.add("w-100"); 
-
+        node.appendChild(textnode);
         valuesBlock.appendChild(node); 
         
         const textareaNode = document.createElement("textarea");                 
