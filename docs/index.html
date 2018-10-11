@@ -1,0 +1,151 @@
+<html>
+<head>
+  <style>
+    body {
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+    .container {
+      width: 640px;
+      margin: 0 auto;
+    }
+    
+    .block {
+      padding: 20px;
+      border: 1px solid;
+    }
+    
+    .block:empty {
+      display: none;
+    }
+    
+    .values-block {
+      white-space: pre;
+    }
+    
+    .form-field {
+      font-size: 12px;
+    }
+    
+    .form-field label {
+      display: inline-block;
+      width: 100px;
+    }
+    
+    .form-field input {
+      width: 250px
+    }
+    
+    textarea {
+      width: 100%;
+      height: 400px;
+      z-index: auto;
+      position: relative;
+      line-height: normal;
+      font-size: 11px;
+      transition: none 0s ease 0s;
+      background: transparent !important;
+      display: block;
+    }
+    #manifest {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class='container'>
+    <div class='block'>
+      <form action="https://github.com/settings/apps/new" method="post">
+        <h2>Create a GitHub App</h2>
+        <div class='form-field'>
+          <label>Function URL: </label><input name='functionURL' placeholder="endpoint url of your function">
+        </div>
+        <input type="textarea" name="manifest" id="manifest" ><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <div class='block values-block'></div>
+  </div>
+  <script>
+    const manifest = {
+      "name": "Azure DevOps Workshop <your name>",
+        "url": "https://www.example.com",
+        "hook_attributes": {
+          "url": "https://example.com/github/events",
+        },
+        "redirect_url": window.location.href,
+        "public": true,
+        "default_permissions": {
+          "issues": "write",
+          "checks": "write"
+        },
+        "default_events": [
+        "issues"
+        ]
+      };
+      
+      const manifestInput = document.querySelector("#manifest");
+      const valuesBlock = document.querySelector('.values-block')
+      
+      function setManifest(manifest) {
+        manifestInput.value = JSON.stringify(manifest)
+      }
+      
+      function getQueryParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+      }
+      
+      function retrieveAppConfiguration(code, callback) {
+        const request = new XMLHttpRequest();
+        request.onreadystatechange = function() {
+          if (request.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
+            if (request.status == 200 || request.status == 201) {
+              callback(JSON.parse(request.responseText))
+            } else {
+              window.location.replace(window.location.href.split('?')[0])
+            }
+          }
+        };
+        request.open( 'POST', `https://api.github.com/app-manifests/${code}/conversions` );
+        request.setRequestHeader( 'Accept', 'application/vnd.github.fury-preview+json' );
+        request.send();
+      }
+      
+      function showAppValues(values) {
+        const APP_ID = values.id;
+        const SECRET = values.webhook_secret
+        const PEM = values.pem;
+        const PEM_BASE64 = btoa(PEM)
+        const text = `secret: ${SECRET}\u000a\u000aAPP_ID: ${APP_ID} \u000aAPP_PEM:`
+        const node = document.createElement("code");                 
+        const textnode = document.createTextNode(text);        
+        node.appendChild(textnode);                             
+        valuesBlock.appendChild(node); 
+        
+        const textareaNode = document.createElement("textarea");                 
+        textareaNode.value = PEM_BASE64                         
+        valuesBlock.appendChild(textareaNode); 
+      }
+      
+      document.querySelector('input[name="functionURL"]').addEventListener('input', (e) => {
+        const value = e.target.value;
+        manifest.url = value;
+        manifest.hook_attributes.url = value;
+        setManifest(manifest)
+      })
+      
+      const code = getQueryParameterByName('code')
+      
+      if(code) {
+        retrieveAppConfiguration(code, showAppValues)
+      }
+      
+      setManifest(manifest)
+    </script>
+  </body>
+  </html>
