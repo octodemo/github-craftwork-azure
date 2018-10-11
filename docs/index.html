@@ -78,7 +78,12 @@
         const request = new XMLHttpRequest();
         request.onreadystatechange = function() {
           if (request.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
+            console.log(request.status);
+            if (request.status == 403) {
+              alert("Ooops. Something went wrong - 403 forbidden");
+            }
             if (request.status == 200 || request.status == 201) {
+              console.log(request.responseText);
               callback(JSON.parse(request.responseText))
             } else {
               window.location.replace(window.location.href.split('?')[0])
@@ -87,6 +92,7 @@
         };
         request.open( 'POST', `https://api.github.com/app-manifests/${code}/conversions` );
         request.setRequestHeader( 'Accept', 'application/vnd.github.fury-preview+json' );
+        console.log('Sending AJAX request');
         request.send();
       }
       
@@ -120,6 +126,7 @@
       const code = getQueryParameterByName('code')
       
       if(code) {
+        console.log("Retrieve config for code", code);
         retrieveAppConfiguration(code, showAppValues)
       }
       
