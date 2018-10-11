@@ -36,7 +36,7 @@
         </div>
       </form>
     </div>
-    <div id='values-block'></div>
+    <div class='values-block'></div>
   </main>
   <script>
     const manifest = {
@@ -58,7 +58,7 @@
       
       const manifestInput = document.querySelector("#manifest");
       const formBlock = document.querySelector("#form");
-      const valuesBlock = document.querySelector('#values-block');
+      const valuesBlock = document.querySelector('.values-block');
 
       function setManifest(manifest) {
         manifestInput.value = JSON.stringify(manifest)
@@ -91,6 +91,7 @@
       }
       
       function showAppValues(values) {
+        console.log(values);
         const APP_ID = values.id;
         const SECRET = values.webhook_secret
         const PEM = values.pem;
