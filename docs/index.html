@@ -1,70 +1,44 @@
 <html>
 <head>
-  <style>
-    body {
-      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-    }
-    .container {
-      width: 640px;
-      margin: 0 auto;
-    }
-    
-    .block {
-      padding: 20px;
-      border: 1px solid;
-    }
-    
-    .block:empty {
-      display: none;
-    }
-    
-    .values-block {
-      white-space: pre;
-    }
-    
-    .form-field {
-      font-size: 12px;
-    }
-    
-    .form-field label {
-      display: inline-block;
-      width: 100px;
-    }
-    
-    .form-field input {
-      width: 250px
-    }
-    
-    textarea {
-      width: 100%;
-      height: 400px;
-      z-index: auto;
-      position: relative;
-      line-height: normal;
-      font-size: 11px;
-      transition: none 0s ease 0s;
-      background: transparent !important;
-      display: block;
-    }
-    #manifest {
-      display: none;
-    }
-  </style>
+  <title>GitHub Craftwork on Azure - Create your GitHub App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
 </head>
-<body>
-  <div class='container'>
-    <div class='block'>
-      <form action="https://github.com/settings/apps/new" method="post">
-        <h2>Create a GitHub App</h2>
-        <div class='form-field'>
-          <label>Function URL: </label><input name='functionURL' placeholder="endpoint url of your function">
+<body class="w-100 sans-serif">
+    <header class="w-100 pa3 ph5-ns bg-white bb b--black-10">
+        <div class="db dt-ns mw9 center w-100">
+          <div class="db dtc-ns v-mid tl w-50">
+            <a href="/" class="dib f5 f4-ns fw6 mt0 mb1 link black-70" title="Home">
+              GitHub Craftwork on Azure
+              
+            </a>
+          </div>
+          <nav class="db dtc-ns v-mid w-100 tl tr-ns mt2 mt0-ns">
+            <a title="Documentation" href="https://github.com/octodemo/github-craftwork-azure/docs" class="f6 fw6 hover-blue link black-70 mr2 mr3-m mr4-l dib">
+              Docs
+            </a>
+            <a title="Tachyons on GitHub" href="https://github.com/octodemo/github-craftwork-azure" class="f6 fw6 hover-blue link black-70 mr2 mr3-m mr4-l dn dib-l">
+              GitHub
+            </a>
+          </nav>
         </div>
-        <input type="textarea" name="manifest" id="manifest" ><br>
-        <input type="submit" value="Submit">
+      </header>
+  <main class='pa3 ph5-ns sans-serif black-80'>
+    <div id="form">
+      <h2 class="h2">Create a GitHub App</h2>
+      <form action="https://github.com/settings/apps/new" method="post" class="w-100 center">
+        <div class='w-100 mt3'>
+          <label class="db fw6 lh-copy f6">Azure Function URL</label>
+          <input name='functionURL' class="pa2 input-reset ba bg-transparent w-100" placeholder="Endpoint URL of your function">
+          <input type="textarea" name="manifest" id="manifest" class="clip" readonly><br>
+        </div>
+        <div class='w-100 mt3'>
+          <input type="submit" value="Submit" class="b ph3 pv2 input-reset ba b--black bg-transparent hover-bg-black hover-white pointer f6 dib">
+        </div>
       </form>
     </div>
-    <div class='block values-block'></div>
-  </div>
+    <div id='values-block'></div>
+  </main>
   <script>
     const manifest = {
       "name": "Azure DevOps Workshop <your name>",
@@ -84,8 +58,9 @@
       };
       
       const manifestInput = document.querySelector("#manifest");
-      const valuesBlock = document.querySelector('.values-block')
-      
+      const formBlock = document.querySelector("#form");
+      const valuesBlock = document.querySelector('#values-block')
+
       function setManifest(manifest) {
         manifestInput.value = JSON.stringify(manifest)
       }
@@ -124,12 +99,16 @@
         const text = `secret: ${SECRET}\u000a\u000aAPP_ID: ${APP_ID} \u000aAPP_PEM:`
         const node = document.createElement("code");                 
         const textnode = document.createTextNode(text);        
-        node.appendChild(textnode);                             
+        node.appendChild(textnode).classList.add("w-100"); 
+
         valuesBlock.appendChild(node); 
         
         const textareaNode = document.createElement("textarea");                 
-        textareaNode.value = PEM_BASE64                         
+        textareaNode.value = PEM_BASE64;                      
+        textareaNode.classList.add("w-100 h-50");
         valuesBlock.appendChild(textareaNode); 
+        formBlock.classList.add("clip");
+
       }
       
       document.querySelector('input[name="functionURL"]').addEventListener('input', (e) => {
