@@ -27,7 +27,7 @@ describe("ModerateIssue", () => {
     await moderateIssue({}, { body: issueOpenedPayload })
 
     sinon.assert.calledWith(addLabelsStub, {
-      labels: ['enhancement'],
+      labels: ['enhancement', 'question', 'bug'],
       number: issueOpenedPayload.issue.number,
       owner: issueOpenedPayload.repository.owner.login,
       repo: issueOpenedPayload.repository.name
