@@ -17,7 +17,7 @@ module.exports = async function (context, data) {
         owner, 
         repo, 
         number, 
-        body: "Thanks for submitting this issue. We will take a look at it!"
+        body: "Thanks for submitting this issue. We will take a look at it later!"
       })
     }
     context.res = {
