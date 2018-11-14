@@ -120,10 +120,9 @@ Now visit [this page](https://octodemo.github.io/github-craftwork-azure/). Here 
 
 1. Paste the function URL you copied from the Azure Function into the textfield on [this page](https://octodemo.github.io/github-craftwork-azure/)
 2. Click the submit button and give your app a name. This name has to be unique. Submit it. 
-3. Copy the APP_ID & APP_PEM from step 2 and use them as a Application Setting
-<--IMPORT IMAGE--?
-4. Go back to your function on Azure and copy the webhook secret
-5. Open your [app settings](https://github.com/settings/apps) in GitHub and paste the webhook secret 
+3. Copy the APP_ID & APP_PEM from step 2 and use them as a application setting.
+![](readme/app-settings.png)
+4. Open your [app settings](https://github.com/settings/apps) in GitHub and paste the webhook secret we copied from the Azure Function.
 
 💡 Woah! You buily your first GitHub App! Congratulations, human!
 
