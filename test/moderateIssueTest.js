@@ -1,6 +1,7 @@
 var sinon = require("sinon");
-var proxyquire =  require('proxyquire')
-var issueOpenedPayload = require('./fixtures/issue-opened.json')
+var proxyquire = require("proxyquire");
+var issueOpenedPayload = require("./fixtures/issue-opened.json");
+
 
 describe("ModerateIssue", () => {
   var moderateIssue
@@ -9,11 +10,13 @@ describe("ModerateIssue", () => {
   before(() => {
     createCommentStub = sinon.spy()
     addLabelsStub = sinon.spy()
+
     octoKitStubs = {
       issues: {
         addLabels: addLabelsStub,
         createComment: createCommentStub
       }
+
     }
 
     defaultLabel = 'question'
@@ -24,8 +27,8 @@ describe("ModerateIssue", () => {
     });
   });
 
-  it('should create comment when issue is opened', async () => {
-    await moderateIssue({}, { body: issueOpenedPayload })
+  it("should create comment when issue is opened", async () => {
+    await moderateIssue({}, { body: issueOpenedPayload });
 
     sinon.assert.calledWith(addLabelsStub, {
       labels: [defaultLabel],
@@ -33,5 +36,5 @@ describe("ModerateIssue", () => {
       owner: issueOpenedPayload.repository.owner.login,
       repo: issueOpenedPayload.repository.name
     });
-  })
+  });
 });
