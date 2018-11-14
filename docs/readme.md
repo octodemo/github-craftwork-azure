@@ -107,23 +107,47 @@ Let's go back to [Azure Pipelines](https://dev.azure.com).
 
 ## Step 6. Create our GitHub App
 
-We are now ready to create a GitHub App that will send webhooks to our app running on Azure. 
+We are now ready to create a GitHub App that will send webhooks to our app running on Azure.
 
 In the Azure Function App dashboard, click on your function for “ModerateIssue”. Click on the `Get URL` button and copy the URL in your text editor (we are going to need this soon). Do the same for the `GitHub Secret` next to it.
 	
 ![](readme/9103F5FA-1A99-4680-A3AA-902E805956DD.png)
 <img src="readme/B039EE86-02E4-43B1-87DB-6C5CA8FCF068.png" width="350" >
 
-Now visit [this page](https://octodemo.github.io/github-craftwork-azure/). Here we will create our GitHub app from a [manifest](https://developer.github.com/apps/building-github-apps/creating-github-apps-from-a-manifest/). This is a preconfigured GitHub App you can share with anyone who wants to use your app in their personal repositories, like we are doing for this workshop.
+Now visit the [Developer Settings](https://github.com/settings/apps) page on your GitHub account and click on `GitHub Apps`.
 
-> 💡 If you want to create an app from scratch, you can do this on the [app settings page](https://github.com/settings/apps). This guide is focused on creating an app from a manifest.
+![](readme/D302A190-1134-418E-AAA2-158FCCB9B15E.png)
 
-1. Paste the function URL you copied from the Azure Function into the textfield on [this page](https://octodemo.github.io/github-craftwork-azure/)
-2. Click the submit button and give your app a name. This name has to be unique. Submit it. 
-3. Copy the APP_ID & APP_PEM from step 2 and use them as a application setting.
-![](readme/app-settings.png)
-4. Open your [app settings](https://github.com/settings/apps) in GitHub and paste the webhook secret we copied from the Azure Function.
-5. In your app settings, click on `Install app` (left menu) and install it on your repository.
+1. Click on Create a new App
+2. Give the app a cool name and description :) 
+3. In the `Homepage URL` `User authentication callback URL` and `Webhook URL` paste the URL provided by the Azure Function App
+4. In the `Webhook Secret` field paste the `GitHub Secret` value from the Azure Function App page
+5. Scroll down to the `Permissions` section and give the `Issues` Read & Write permission
+6. Subscribe to the `Issues` events by flagging the checkbox
+7. Leave the `Only this account` selection and confirm the app creation
+
+The page will reload. At this point scroll down and:
+
+1. Click on `Generate the private key`
+2. Download the private key pem file to your computer
+3. :warning: *Important*: copy the App ID somewhere (we're going to need this later)
+
+We can now install the app on your repository by clicking on the `Install App` link in the navigation sidebar. Select the repository you forked at the beginning of this guide from the dropdown and confirm the installation.
+
+Now go back to Azure Function Apps.
+
+1. Select your function and click on `Application Settings`
+2. Add new setting in the list: APP_ID `[your GitHub App ID here]`
+
+We need to encode the contents of our `.pem` certificate using base64 in order to store it as an environment variable in Azure and make it available to our function.
+
+- if you're on MacOS / Linux: `cat [path to the .pem file you just downloaded] | openssl base64 | pbcopy`
+- 
+- alternatively use https://www.base64encode.com/ 
+	
+Once you have the pem file encoded, go back to the Azure Portal and click on your Function App. Go to `Application Settings` and add a new setting in the list with key APP_PEM and the encoded string as value.
+
+![](readme/1ADDAD91-4F30-43DA-93D3-92ED418F9247.png)
 
 💡 Woah! You buily your first GitHub App! Congratulations, human!
 
