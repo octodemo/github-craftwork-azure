@@ -74,7 +74,7 @@ Let's go back to [Azure Pipelines](https://dev.azure.com).
 1. Click on Releases
 	1. New Pipeline
 	2. Azure App Service deployment
-		1. Create “Deploy to Azure Functions” stage
+		1. Create “Deploy to Azure Functions” stage **IMPORTANT** Do NOT pick the "Function Apps" deployment template!
 		2. Click on the job/task link in the UI
 		3. Fill the subscription form -> Authorize
 			1. Wait for `Configuring the Azure service connection...` to disappear
