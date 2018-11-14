@@ -123,6 +123,7 @@ Now visit [this page](https://octodemo.github.io/github-craftwork-azure/). Here 
 3. Copy the APP_ID & APP_PEM from step 2 and use them as a application setting.
 ![](readme/app-settings.png)
 4. Open your [app settings](https://github.com/settings/apps) in GitHub and paste the webhook secret we copied from the Azure Function.
+5. In your app settings, click on `Install app` (left menu) and install it on your repository.
 
 💡 Woah! You buily your first GitHub App! Congratulations, human!
 
