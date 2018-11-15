@@ -1,0 +1,150 @@
+<html>
+<head>
+  <title>GitHub Craftwork on Azure - Create your GitHub App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+</head>
+<body class="w-100 sans-serif">
+    <header class="w-100 pa3 ph5-ns bg-white bb b--black-10">
+        <div class="db dt-ns mw9 center w-100">
+          <div class="db dtc-ns v-mid tl w-50">
+            <a href="/" class="dib f5 f4-ns fw6 mt0 mb1 link black-70" title="Home">
+              GitHub Craftwork on Azure
+            </a>
+          </div>
+          <nav class="db dtc-ns v-mid w-100 tl tr-ns mt2 mt0-ns">
+            <a title="Documentation" href="https://github.com/octodemo/github-craftwork-azure/tree/master/docs" class="f6 fw6 hover-blue link black-70 mr2 mr3-m mr4-l dib">
+              Docs
+            </a>
+            <a title="Tachyons on GitHub" href="https://github.com/octodemo/github-craftwork-azure" class="f6 fw6 hover-blue link black-70 mr2 mr3-m mr4-l dn dib-l">
+              GitHub
+            </a>
+          </nav>
+        </div>
+      </header>
+  <main class='pa3 ph5-ns sans-serif black-80'>
+    <div id="form">
+      <h2 class="h2">Create a GitHub App</h2>
+      <form action="https://github.com/settings/apps/new" method="post" class="w-100">
+        <div class='w-100 mt3'>
+          <label class="db fw6 lh-copy f6">Azure Function URL</label>
+          <input name='functionURL' class="pa2 input-reset ba bg-transparent w-100" placeholder="Endpoint URL of your function">
+          <input type="textarea" name="manifest" id="manifest" class="clip"><br>
+        </div>
+        <div class='w-100 mt3'>
+          <input type="submit" value="Submit" class="b ph3 pv2 input-reset ba b--black bg-transparent hover-bg-black hover-white pointer f6 dib">
+        </div>
+      </form>
+    </div>
+    <div id='values-block'>
+      <form class="w-100">
+        <fieldset class="ba b--transparent ph0 mh0">  
+          <div class="mt3 w-100">
+            <strong>Great, let's continue</strong>
+            <ol>
+              <li>In Azure, visit your Application settings.</li>
+              <li>Copy over APP_ID &amp; APP_PEM.</li>
+              <li>Go back to your function, copy webhook secret. </li> 
+              <li>Go to your <a href="https://github.com/settings/apps">app in GitHub</a> and paste Webhook secret </li> 
+            </ol>
+          </div>
+          <div class="mt3">
+            <label class="db fw6 lh-copy f6" for="APP_ID">APP_ID</label>
+            <input readonly class="w-100 code pa2 black-50" name="APP_ID" id="APP_ID" value="" />
+          </div>
+          <div class="mt3 w-100 h-50">
+            <label class="db fw6 lh-copy f6" for="APP_PEM">APP_PEM</label>
+            <textarea readonly class="code pa2 black-50" name="APP_PEM" id="APP_PEM"></textarea>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </main>
+  <script>
+    const manifest = {
+      "name": "Azure DevOps Workshop <your name>",
+        "url": "https://www.example.com",
+        "hook_attributes": {
+          "url": "https://example.com/github/events",
+        },
+        "redirect_url": window.location.href,
+        "public": true,
+        "default_permissions": {
+          "issues": "write",
+          "checks": "write"
+        },
+        "default_events": [
+        "issues"
+        ]
+      };
+      
+      const manifestInput = document.querySelector("#manifest");
+      const formBlock = document.querySelector("#form");
+      const valuesBlock = document.querySelector("#values-block");
+      valuesBlock.classList.add("clip");
+
+      function setManifest(manifest) {
+        manifestInput.value = JSON.stringify(manifest)
+      }
+      
+      function getQueryParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+      }
+      
+      function retrieveAppConfiguration(code, callback) {
+        const request = new XMLHttpRequest();
+        request.onreadystatechange = function() {
+          if (request.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
+            if (request.status == 403) {
+              alert("Ooops. Something went wrong - 403 forbidden");
+            }
+            if (request.status == 200 || request.status == 201) {
+              callback(JSON.parse(request.responseText))
+            } else {
+              window.location.replace(window.location.href.split('?')[0])
+            }
+          }
+        };
+
+        request.open( 'POST', `https://api.github.com/app-manifests/${code}/conversions` );
+        request.setRequestHeader( 'Accept', 'application/vnd.github.fury-preview+json' );
+        request.send();
+      }
+      
+      function showAppValues(values) {
+        valuesBlock.classList.remove("clip");
+
+        const appIdField = document.querySelector('input[name="APP_ID"]');
+        appIdField.value = values.id;
+        
+        const PEM = values.pem;
+        const PEM_BASE64 = btoa(PEM)
+        const textareaNode = document.querySelector('textarea[name="APP_PEM"]');
+        textareaNode.value = PEM_BASE64;      
+        // Hide form                
+        formBlock.classList.add("clip");
+      }
+      
+      document.querySelector('input[name="functionURL"]').addEventListener('input', (e) => {
+        const value = e.target.value;
+        manifest.url = value;
+        manifest.hook_attributes.url = value;
+        setManifest(manifest)
+      })
+      
+      const code = getQueryParameterByName('code')
+      
+      if(code) {
+        retrieveAppConfiguration(code, showAppValues)
+      }
+      
+      setManifest(manifest);
+    </script>
+  </body>
+  </html>
