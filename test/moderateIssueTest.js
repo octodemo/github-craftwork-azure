@@ -2,16 +2,16 @@ var sinon = require("sinon");
 var proxyquire = require("proxyquire");
 var issueOpenedPayload = require("./fixtures/issue-opened.json");
 
-describe("ModerateIssue", function() {
-  var moderateIssue;
 
-  before(function() {
-    createCommentStub = sinon.spy();
-    addLabelsStub = sinon.spy();
+describe("ModerateIssue", () => {
+  var moderateIssue
+
+  before(() => {
+
+    addLabelsStub = sinon.spy()
     octoKitStubs = {
       issues: {
-        addLabelsStub: addLabelsStub,
-        createComment: createCommentStub
+        addLabels: addLabelsStub,
       }
     };
 
@@ -22,12 +22,12 @@ describe("ModerateIssue", function() {
     });
   });
 
-  it("should create comment when issue is opened", async () => {
-    await moderateIssue({}, { body: issueOpenedPayload });
 
-    sinon.assert.calledWith(createCommentStub, {
-      body:
-        "Thanks for submitting this issue. We will take a look at it later!",
+  it('should assign the enhancement label', async () => {
+    await moderateIssue({}, { body: issueOpenedPayload })
+
+    sinon.assert.calledWith(addLabelsStub, {
+      labels: ['enhancement', 'question', 'bug'],
       number: issueOpenedPayload.issue.number,
       owner: issueOpenedPayload.repository.owner.login,
       repo: issueOpenedPayload.repository.name
