@@ -14,7 +14,6 @@ steps:
 
 - script: |
     npm install
-    npm run test
   displayName: 'npm install and test'
 
 # Publish Test Results to Azure Pipelines/TFS
