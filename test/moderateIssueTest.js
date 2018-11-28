@@ -35,4 +35,3 @@ describe("ModerateIssue", () => {
       repo: issueOpenedPayload.repository.name
     });
   });
-});
