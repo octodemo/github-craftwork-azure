@@ -15,6 +15,7 @@ describe("ModerateIssue", () => {
       issues: {
         addLabels: addLabelsStub,
         createComment: createCommentStub
+
       }
 
     }
@@ -26,9 +27,6 @@ describe("ModerateIssue", () => {
       './get-luis-intent': () => new Promise(resolve => resolve(defaultLabel))
     });
   });
-
-  it("should create comment when issue is opened", async () => {
-    await moderateIssue({}, { body: issueOpenedPayload });
 
     sinon.assert.calledWith(addLabelsStub, {
       labels: [defaultLabel],
