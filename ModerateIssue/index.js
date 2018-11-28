@@ -30,7 +30,7 @@ module.exports = async function (context, data) {
       }
     };
   } catch (e) {
-    context.log("Error:" ,e);
+    context.log("Error:",e);
     context.res = {
       status: 500,
       body: e.message
