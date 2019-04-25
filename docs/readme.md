@@ -142,7 +142,7 @@ Now go back to Azure Function Apps.
 We need to encode the contents of our `.pem` certificate using base64 in order to store it as an environment variable in Azure and make it available to our function.
 
 - if you're on MacOS / Linux: `cat [path to the .pem file you just downloaded] | openssl base64 | pbcopy`
-- 
+
 - alternatively use https://www.base64encode.com/ 
 	
 Once you have the pem file encoded, go back to the Azure Portal and click on your Function App. Go to `Application Settings` and add a new setting in the list with key APP_PEM and the encoded string as value.
@@ -160,7 +160,7 @@ Next we will create a Pull Request to merge the contents of the `assign-label-to
 1. Navigate to the `Code` section of your repository
 2. Click on the `branch` dropdown and select `assign-label-to-new-issues`
 3. Click on the `new pull request` button and confirm
-4. Wait for Azure DevOps to repurt the build ran successfully
+4. Wait for Azure DevOps to report the build ran successfully
 5. Merge the pull request
 6. Wait for the check next to the last commit in the `Commits` tab to also report "green" 
 7. Finally test the newly deployed version of the function by creating a new issue
